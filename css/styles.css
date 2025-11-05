@@ -46,6 +46,12 @@ body {
   color: #D4AF37;
 }
 
+.svc-nav {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
 .svc-nav a {
   color: #ffffff;
   opacity: 0.85;
@@ -55,6 +61,7 @@ body {
   text-decoration: none;
   transition: all 0.18s;
   font-family: Inter, "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+font-weight: 600;
 }
 
 .svc-nav a:hover,
@@ -64,8 +71,53 @@ body {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
 
+/* ✅ ✅ ✅ RESPONSIVE DESIGN */
+
+/* 📱 Tablets & Mobile */
+@media (max-width: 992px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-graphics {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+/* 📱 Mobile Only */
+@media (max-width: 600px) {
+  /* Hide desktop menu – hamburger will be added later */
+  .svc-nav {
+    display: none;
+  }
+
+  .svc-logo {
+    font-size: 1.4rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-buttons a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .cta-section {
+    padding: 50px 20px;
+  }
+}
+
 /* =====================================================
-   HERO SECTION
+   HERO SECTION — Upgraded
 ===================================================== */
 .hero {
   height: 85vh;
@@ -88,7 +140,7 @@ body {
   font-size: 55px;
   font-weight: 800;
   line-height: 1.2;
-  color: #fffefe;
+  color: #fffefe
 }
 
 .hero h1 span {
@@ -151,170 +203,6 @@ body {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-18px); }
   100% { transform: translateY(0px); }
-}
-
-/* =====================================================
-   CTA SECTION
-===================================================== */
-.cta-section {
-  text-align: center;
-  padding: 80px 20px;
-  background: #111;
-}
-
-.cta-section h2 {
-  font-size: 36px;
-  margin-bottom: 15px;
-  color: #fffefe;
-}
-
-.cta-section p {
-  font-size: 18px;
-  margin-bottom: 25px;
-  color: #b8b5b5;
-}
-
-.cta-section a {
-  padding: 14px 32px;
-  border-radius: 8px;
-  text-decoration: none;
-  background: #d9b70d;
-  color: #fff;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.cta-section a:hover {
-  background: #ffe100;
-}
-
-/* =====================================================
-   FOOTER
-===================================================== */
-footer {
-  text-align: center;
-  padding: 25px 20px;
-  background: #000;
-  color: #fff;
-  font-size: 14px;
-}
-
-/* =====================================================
-   MOBILE SIDEBAR MENU (LEFT)
-===================================================== */
-.hamburger {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-  color: #D4AF37;
-}
-
-.desktop-nav {
-  display: flex;
-}
-
-.mobile-sidebar {
-  position: fixed;
-  top: 0;
-  left: -260px;
-  width: 260px;
-  height: 100%;
-  background: #111;
-  padding: 80px 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-  transition: left .35s ease-in-out;
-  z-index: 200;
-}
-
-.mobile-sidebar a {
-  color: #fff;
-  font-size: 18px;
-  opacity: .9;
-  text-decoration: none;
-  padding: 10px 0;
-  transition: .3s;
-}
-
-.mobile-sidebar a:hover,
-.mobile-sidebar a.active {
-  color: #000;
-  background: #D4AF37;
-  padding-left: 12px;
-  border-radius: 6px;
-}
-
-.mobile-sidebar.active {
-  left: 0;
-}
-
-.sidebar-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,.55);
-  display: none;
-  z-index: 150;
-}
-
-.sidebar-overlay.active {
-  display: block;
-}
-
-/* =====================================================
-   RESPONSIVE
-===================================================== */
-@media (max-width: 900px) {
-  .desktop-nav {
-    display: none;
-  }
-  .hamburger {
-    display: block;
-  }
-
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    height: auto;
-    padding: 60px 20px;
-  }
-
-  .hero h1 {
-    font-size: 36px;
-  }
-
-  .hero p {
-    font-size: 16px;
-  }
-
-  .hero-graphics {
-    width: 260px;
-    height: 260px;
-    left: 50%;
-    right: auto;
-    top: 60%;
-    transform: translateX(-50%);
-  }
-}
-
-@media (max-width: 600px) {
-  .cta-section h2 {
-    font-size: 28px;
-  }
-
-  .cta-section p {
-    font-size: 15px;
-  }
-
-  .btn-primary,
-  .btn-outline,
-  .cta-section a {
-    width: 100%;
-    text-align: center;
-  }
 }
 
 /* -------------------------
