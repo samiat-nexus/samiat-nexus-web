@@ -1,115 +1,61 @@
-/* =====================================================
-   RESPONSIVE.CSS
-   Centralized responsiveness for all pages
-===================================================== */
-/* ===== Tablet & small screens ===== */
-@media (max-width: 900px) {
-
-  /* Navbar */
-  .desktop-nav {
-    display: none;
-  }
-  .hamburger {
-    display: block;
-  }
-
-  .svc-navbar {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  /* Hero Section */
-  .hero {
-    flex-direction: column;
-    text-align: center;
-    height: auto;
-    padding: 60px 20px;
-  }
-
-  .hero h1 {
-    font-size: 36px;
-  }
-
-  .hero p {
-    font-size: 16px;
-  }
-
-  .hero-graphics {
-    width: 260px;
-    height: 260px;
-    left: 50%;
-    right: auto;
-    top: 60%;
-    transform: translateX(-50%);
-  }
-}
-
-/* ===== Mobile screens ===== */
-@media (max-width: 600px) {
-  .cta-section h2 {
-    font-size: 28px;
-  }
-
-  .cta-section p {
-    font-size: 15px;
-  }
-
-  .btn-primary,
-  .btn-outline,
-  .cta-section a {
-    width: 100%;
-    text-align: center;
-  }
-}
-
-/* ===== Sidebar Menu ===== */
-.mobile-sidebar {
+/* ================= MOBILE SIDEBAR ================= */
+#mobileSidebar {
   position: fixed;
   top: 0;
-  left: -260px; /* slide from left */
+  left: -260px; /* hidden initially */
   width: 260px;
   height: 100%;
   background: #111;
-  padding: 80px 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-  transition: left 0.35s ease-in-out;
-  z-index: 200;
+  color: white;
+  overflow-y: auto;
+  transition: left 0.3s ease;
+  z-index: 2000;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
 }
 
-.mobile-sidebar a {
-  color: #fff;
-  font-size: 18px;
-  opacity: 0.9;
-  text-decoration: none;
-  padding: 10px 0;
-  transition: 0.3s;
+#mobileSidebar.active {
+  left: 0; /* show sidebar */
 }
 
-.mobile-sidebar a:hover,
-.mobile-sidebar a.active {
-  color: #000;
-  background: #D4AF37;
-  padding-left: 12px;
-  border-radius: 6px;
-}
-
-.mobile-sidebar.active {
-  left: 0;
-}
-
-.sidebar-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.55);
-  display: none;
-  z-index: 150;
-}
-
-.sidebar-overlay.active {
+#mobileSidebar a {
   display: block;
+  color: white;
+  padding: 12px 8px;
+  margin-bottom: 6px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+#mobileSidebar a:hover {
+  background: #333;
+}
+
+#mobileSidebar .close-btn {
+  font-size: 28px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  display: block;
+}
+
+/* Hamburger button */
+#mobileSidebarToggle {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 2100;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #111; /* change to suit your page */
+  cursor: pointer;
+  display: none; /* default hide */
+}
+
+/* SHOW ONLY ON MOBILE */
+@media (max-width: 991px) {
+  #mobileSidebarToggle {
+    display: block;
+  }
 }
