@@ -1,12 +1,12 @@
-/* --------------------- Sidebar --------------------- */
+/* Sidebar hidden by default */
 .sidebar {
-  display: none; /* hidden by default on desktop */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 250px;
   height: 100%;
-  background-color: #111; /* dark sidebar */
+  background-color: #111;
   padding: 2rem 1rem;
   box-shadow: 2px 0 10px rgba(0,0,0,0.3);
   overflow-y: auto;
@@ -22,15 +22,15 @@
   text-align: center;
 }
 
-/* Optional: style buttons colors like your theme */
 .sidebar .btn-primary {
-  background-color: #007b00; /* Green */
+  background-color: #007b00;
   color: #fff;
   border: none;
   padding: 0.7rem 1rem;
   border-radius: 5px;
   text-decoration: none;
 }
+
 .sidebar .btn-outline {
   background-color: transparent;
   color: #fff;
@@ -40,15 +40,13 @@
   text-decoration: none;
 }
 
-/* --------------------- Mobile Responsiveness --------------------- */
+/* Mobile behavior */
 @media (max-width: 768px) {
-  /* Hide original hero buttons on mobile */
   .hero-buttons {
-    display: none !important;
+    display: none !important; /* hide original buttons on mobile */
   }
 
-  /* Show sidebar on mobile */
   .sidebar {
-    display: block;
+    display: block; /* show sidebar on mobile */
   }
 }
