@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Create sidebar
+  // Create mobile sidebar
   const sidebar = document.createElement('div');
   sidebar.id = 'mobileSidebar';
   sidebar.innerHTML = `
@@ -12,13 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
   `;
   document.body.appendChild(sidebar);
 
-  // Create hamburger button
+  // Hamburger toggle button
   const toggleBtn = document.createElement('button');
   toggleBtn.id = 'mobileSidebarToggle';
   toggleBtn.innerHTML = '&#9776;';
   document.body.appendChild(toggleBtn);
 
-  // Toggle sidebar open/close
+  // Open/close sidebar
   toggleBtn.addEventListener('click', () => {
     sidebar.classList.add('active');
   });
@@ -33,4 +33,19 @@ document.addEventListener("DOMContentLoaded", () => {
       sidebar.classList.remove('active');
     }
   });
+
+  // Handle resize
+  const handleResize = () => {
+    if (window.innerWidth >= 992) {
+      sidebar.classList.remove('active');
+      toggleBtn.style.display = 'none';
+      document.querySelectorAll('.desktop-buttons').forEach(btn => btn.style.display = 'inline-block');
+    } else {
+      toggleBtn.style.display = 'block';
+      document.querySelectorAll('.desktop-buttons').forEach(btn => btn.style.display = 'none');
+    }
+  };
+
+  window.addEventListener('resize', handleResize);
+  handleResize();
 });
