@@ -700,6 +700,77 @@ body {
   box-shadow: 0 0 12px #ffffff;
 }
 
+/* Contact Social Links */
+.contact-social {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.contact-social a {
+  position: relative;
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 50px;
+  background-color: #111;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.contact-social a span {
+  position: relative; /* keep text above animation */
+  z-index: 2;
+}
+
+/* The continuously moving line */
+.contact-social a::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%; /* start off left */
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-25deg);
+  z-index: 1;
+
+  /* Animation */
+  animation: slideLine 3s linear infinite;
+}
+
+/* Keyframes for continuous sliding */
+@keyframes slideLine {
+  0% {
+    left: -50%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+/* Optional hover color effect */
+.contact-social a:hover {
+  color: #ffd900;
+  background-color: #222;
+  box-shadow: 0 5px 15px rgba(255,102,0,0.3);
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  .contact-social {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .contact-social a {
+    width: 100%;
+  }
+}
+
 /* Map */
 .map-section iframe {
   width: 100%;
