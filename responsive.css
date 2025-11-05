@@ -1,78 +1,79 @@
-/* ===== RESPONSIVE ===== */
+/* ================= mobile sidebar (global) ================= */
 
-/* Mobile: Sidebar visible, hide desktop hero buttons */
-@media screen and (max-width: 991px) {
-  /* Hide original hero buttons on mobile */
+/* base: hidden on desktop */
+.mobile-sidebar {
+  display: none;
+}
+
+/* inner styling */
+.mobile-sidebar-inner {
+  background: #0b0b0b;
+  color: #fff;
+  width: 250px;
+  height: 100vh;
+  padding: 22px 16px;
+  box-shadow: 2px 0 18px rgba(0,0,0,0.4);
+  overflow-y: auto;
+  font-family: Inter, Arial, sans-serif;
+}
+
+/* nav links */
+.mobile-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px 0;
+}
+.mobile-nav li { margin-bottom: 10px; }
+.mobile-nav a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 10px 8px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+.mobile-nav a:hover { background: rgba(212,175,55,0.12); color: #ffd966; }
+
+/* hero buttons placeholder inside sidebar */
+.sidebar-hero-buttons {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ensure hero buttons inside sidebar look stacked */
+.sidebar-hero-buttons .btn-primary,
+.sidebar-hero-buttons .btn-outline {
+  display: block !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+/* ===== show sidebar only on mobile (<=991px) ===== */
+@media (max-width: 991px) {
+  .mobile-sidebar {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1200;
+  }
+
+  /* hide original hero buttons on mobile - but JS will also move them */
   .hero-buttons {
     display: none !important;
   }
 
-  /* Sidebar container */
-  body::before {
-    content: '';
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 250px;
-    height: 100%;
-    background: #111;
-    z-index: 999;
-  }
-
-  /* Sidebar content */
-  .mobile-sidebar {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 250px;
-    height: 100%;
-    background-color: #111;
-    color: #fff;
-    padding: 60px 20px;
-    z-index: 1000;
-    overflow-y: auto;
-  }
-
-  .mobile-sidebar a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 0;
-    font-size: 18px;
-  }
-
-  .mobile-sidebar a:hover {
-    color: #ffd700;
-  }
-
-  .mobile-sidebar .hero-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 20px;
-  }
-
-  .mobile-sidebar .hero-buttons a {
-    display: block;
-    text-align: center;
-    padding: 10px;
-    background: #ffd700;
-    color: #111;
-    border-radius: 5px;
-  }
-
-  .mobile-sidebar .hero-buttons a.btn-outline {
-    background: transparent;
-    border: 2px solid #ffd700;
-    color: #ffd700;
+  /* add left padding to page content so sidebar doesn't overlap (optional) */
+  /* if you prefer sidebar overlay, remove following rule */
+  body {
+    padding-left: 250px; /* comment out if you want overlay instead of persistent sidebar */
   }
 }
 
-/* Desktop: Hide mobile sidebar */
-@media screen and (min-width: 992px) {
-  .mobile-sidebar {
-    display: none !important;
-  }
+/* ===== desktop: ensure no effect ===== */
+@media (min-width: 992px) {
+  .mobile-sidebar { display: none !important; }
+  body { padding-left: 0; }
 }
