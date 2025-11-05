@@ -1,73 +1,13 @@
-/* Hide desktop buttons on mobile */
-@media (max-width: 991px) {
-  .desktop-buttons {
-    display: none !important;
-  }
-}
+ <!-- Desktop Buttons -->
+  <div class="desktop-buttons">
+    <button>Home</button>
+    <button>About</button>
+    <button>Services</button>
+  </div>
 
-/* Mobile Sidebar */
-#mobileSidebar {
-  position: fixed;
-  top: 0;
-  left: -260px;
-  width: 260px;
-  height: 100%;
-  background-color: #111;
-  color: #fff;
-  padding: 20px;
-  box-shadow: 2px 0 5px rgba(0,0,0,0.5);
-  transition: left 0.3s ease;
-  z-index: 9999;
-}
-
-#mobileSidebar.active {
-  left: 0;
-}
-
-#mobileSidebar a {
-  display: block;
-  color: white;
-  padding: 12px 8px;
-  margin: 6px 0;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 500;
-}
-
-#mobileSidebar a:hover {
-  background-color: #333;
-}
-
-#mobileSidebar .close-btn {
-  font-size: 28px;
-  cursor: pointer;
-  display: block;
-  margin-bottom: 20px;
-}
-
-/* Hamburger button */
-#mobileSidebarToggle {
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  font-size: 28px;
-  background: none;
-  border: none;
-  color: #111;
-  cursor: pointer;
-  z-index: 10000;
-  display: none; /* hide by default */
-}
-
-@media (max-width: 991px) {
-  #mobileSidebarToggle {
-    display: block;
-  }
-}
-
-/* Hide sidebar on desktop */
-@media (min-width: 992px) {
-  #mobileSidebar {
-    display: none !important;
-  }
-}
+  <!-- Mobile Sidebar -->
+  <div class="sidebar-buttons">
+    <button>Home</button>
+    <button>About</button>
+    <button>Services</button>
+  </div>
