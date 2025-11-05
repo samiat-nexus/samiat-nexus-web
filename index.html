@@ -1,88 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Samiat Nexus | Digital Agency</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samiat Nexus | Digital Agency</title>
 
-<!-- Main CSS -->
-<link rel="stylesheet" href="css/styles.css">
+  <!-- ✅ CSS FILE -->
+  <link rel="stylesheet" href="css/styles.css">
 
-<!-- AOS Animations -->
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
-<style>
-/* HAMBURGER BUTTON */
-.hamburger {
-  display: none;
-  position: fixed;
-  top: 15px;
-  right: 20px;
-  font-size: 32px;
-  z-index: 1001;
-  cursor: pointer;
-  color: #111;
-}
-
-/* MOBILE SIDEBAR */
-.mobile-sidebar {
-  position: fixed;
-  top: 0;
-  left: -250px;
-  width: 220px;
-  height: 100%;
-  background: #111;
-  padding: 20px;
-  transition: 0.3s;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-}
-
-.mobile-sidebar a {
-  color: #fff;
-  text-decoration: none;
-  margin: 15px 0;
-  font-size: 18px;
-}
-
-/* OVERLAY */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-  display: none;
-  z-index: 999;
-}
-
-/* SHOW ONLY ON MOBILE */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-}
-</style>
+  <!-- ✅ AOS Animations -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
 
 <body>
-
-<!-- MOBILE SIDEBAR & HAMBURGER -->
-<div class="hamburger" onclick="toggleSidebar()">☰</div>
-
-<div class="mobile-sidebar" id="mobileSidebar">
-  <a href="index.html">Home</a>
-  <a href="services.html">Services</a>
-  <a href="packages.html">Packages</a>
-  <a href="why-choose-us.html">Why Choose Us</a>
-  <a href="contact.html">Contact</a>
-</div>
-
-<div class="overlay" id="overlay" onclick="closeSidebar()"></div>
-
-<!-- DESKTOP NAVBAR -->
+  
+  <!-- ✅ NAVBAR -->
 <header class="svc-header">
   <div class="svc-navbar svc-wrap">
     <div class="svc-logo">Samiat <span>Nexus</span></div>
@@ -96,55 +29,41 @@
   </div>
 </header>
 
-<!-- HERO SECTION -->
-<section class="hero">
-  <div class="hero-content" data-aos="fade-up">
-    <h1>Empowering Businesses<br>with <span>Digital Solutions</span></h1>
-    <p>We help brands grow through smart strategies & premium digital services.</p>
-    <div class="hero-buttons">
-      <a href="services.html" class="btn-primary">Explore Services</a>
-      <a href="contact.html" class="btn-outline">Get in Touch</a>
+  <!-- ✅ HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content" data-aos="fade-up">
+      <h1>Empowering Businesses<br>with <span>Digital Solutions</span></h1>
+      <p>We help brands grow through smart strategies & premium digital services.</p>
+
+      <div class="hero-buttons">
+        <a href="services.html" class="btn-primary">Explore Services</a>
+        <a href="contact.html" class="btn-outline">Get in Touch</a>
+      </div>
     </div>
-  </div>
-  <div class="hero-graphics" data-aos="fade-left"></div>
-</section>
+    <div class="hero-graphics" data-aos="fade-left"></div>
+  </section>
 
-<!-- CTA -->
-<section class="cta-section" data-aos="zoom-in">
-  <h2>Have a Project in Mind?</h2>
-  <p>Let’s build success together!</p>
-  <a href="contact.html">Contact Us</a>
-</section>
 
-<!-- FOOTER -->
-<footer>
-  <p>© 2025 Samiat Nexus. All rights reserved.</p>
-</footer>
+  <!-- ✅ CTA -->
+  <section class="cta-section" data-aos="zoom-in">
+    <h2>Have a Project in Mind?</h2>
+    <p>Let’s build success together!</p>
+    <a href="contact.html">Contact Us</a>
+  </section>
 
-<!-- AOS Script -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({ duration: 900, once: true });
-</script>
+ <!-- ✅ FOOTER -->
+  <footer>
+    <p>© 2025 Samiat Nexus. All rights reserved.</p>
+  </footer>
+  
+  <!-- ✅ AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 900, once: true });
+  </script>
 
-<!-- MOBILE SIDEBAR JS -->
-<script>
-const sidebar = document.getElementById('mobileSidebar');
-const overlay = document.getElementById('overlay');
-
-function toggleSidebar() {
-  sidebar.style.left = (sidebar.style.left === '0px') ? '-250px' : '0px';
-  overlay.style.display = (sidebar.style.left === '0px') ? 'block' : 'none';
-}
-
-function closeSidebar() {
-  sidebar.style.left = '-250px';
-  overlay.style.display = 'none';
-}
-</script>
-
-<!-- OTHER JS -->
-<script src="js/script.js"></script>
-
+  <!-- ✅ JS -->
+  <script src="js/script.js"></script>
+  
 </body>
 </html>
