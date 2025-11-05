@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Samiat Nexus</title>
+
+  <!-- ✅ Isolated Premium Contact Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- AOS Animation -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+
+ <!-- Navbar -->
+<header class="svc-header">
+  <div class="svc-navbar svc-wrap">
+    <div class="svc-logo">Samiat <span>Nexus</span></div>
+    <nav class="svc-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="packages.html">Packages</a>
+      <a href="why-choose-us.html">Why Choose Us</a>
+      <a href="contact.html>" class="active">Contact</a>
+    </nav>
+  </div>
+</header>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="contact-hero" data-aos="fade-up">
+    <h1>Let’s Build Something Amazing Together</h1>
+    <p>We’re ready to bring your vision to life. Reach out now!</p>
+  </section>
+
+  <!-- ===== MAIN CONTACT AREA (SPLIT LAYOUT) ===== -->
+  <section class="contact-wrapper" data-aos="fade-up">
+
+    <!-- Left: Contact Info -->
+    <div class="contact-info">
+      <h3>Contact Information</h3>
+      <p class="info-text">Feel free to get in touch anytime!</p>
+
+      <div class="info-item"><span>📧</span> contact.samiatnexus@gmail.com</div>
+      <div class="info-item"><span>📍</span> Dhaka, Bangladesh</div>
+
+      <div class="contact-social">
+        <a href="#" target="_blank">LinkedIn</a>
+        <a href="#" target="_blank">Facebook</a>
+        <a href="#" target="_blank">Instagram</a>
+      </div>
+
+      <!-- ✅ Coded Decorative Image -->
+      <div class="contact-image"></div>
+    </div>
+
+    <!-- Right: Form -->
+    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="c1d260fc-060c-4ee0-b2a5-17943818b06d">
+
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+
+      <button type="submit" class="submit-btn">Send Message</button>
+      <p id="success-msg"></p>
+    </form>
+
+  </section>
+
+  <!-- ===== GOOGLE MAP (WORKS - NO KEY NEEDED) ===== -->
+  <section class="map-section" data-aos="fade-up">
+    <iframe width="100%" height="360" style="border:0;"
+      loading="lazy"
+      allowfullscreen
+      referrerpolicy="no-referrer-when-downgrade"
+      src="https://maps.google.com/maps?q=Dhaka,%20Bangladesh&z=13&output=embed">
+    </iframe>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="contact-footer">
+    <p>© 2025 Samiat Nexus — All Rights Reserved</p>
+  </footer>
+
+  <script>
+    AOS.init({ duration: 1000 });
+  </script>
+
+</body>
+</html>
