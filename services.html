@@ -9,12 +9,7 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-  <!-- ✅ Responsive CSS -->
-  <link rel="stylesheet" href="responsive.css">
-
-  <!-- ===== Inlined Isolated CSS (svc- prefix) ===== -->
   <style>
-    /* ===== Variables ===== */
     :root{
       --svc-black: #000000;
       --svc-white: #ffffff;
@@ -23,169 +18,49 @@
       --svc-surface: #ffffff;
       --svc-radius: 14px;
     }
-
-    /* ===== Reset & Base ===== */
     *{box-sizing:border-box;margin:0;padding:0}
     html,body{height:100%}
     body{
       font-family: Inter, "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
       color:var(--svc-black);
       background:var(--svc-black);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
       line-height:1.45;
     }
     a{color:inherit;text-decoration:none}
-
-    /* ===== Container ===== */
     .svc-wrap { max-width:1200px; margin:0 auto; }
-
-    /* ===== HEADER ===== */
-    .svc-header {
-      background: transparent;
-      padding:18px 20px;
-      position:sticky; top:0; z-index:110;
-      backdrop-filter: blur(6px);
-    }
-    .svc-navbar {
-      display:flex; align-items:center; justify-content:space-between;
-      gap:20px;
-      max-width:1180px; margin:0 auto;
-    }
+    .svc-header { background: transparent; padding:18px 20px; position:sticky; top:0; z-index:110; backdrop-filter: blur(6px); }
+    .svc-navbar { display:flex; align-items:center; justify-content:space-between; gap:20px; max-width:1180px; margin:0 auto; }
     .svc-logo { font-weight:700; font-size:20px; color:var(--svc-white); letter-spacing:0.2px; }
     .svc-logo span{ color:var(--svc-gold) }
-    .svc-nav {
-      display:flex; gap:18px; align-items:center;
-    }
-    .svc-nav a{
-      color:var(--svc-white); opacity:0.85; font-weight:600; padding:8px 12px; border-radius:8px; transition:all .18s;
-    }
+    .svc-nav { display:flex; gap:18px; align-items:center; }
+    .svc-nav a{ color:var(--svc-white); opacity:0.85; font-weight:600; padding:8px 12px; border-radius:8px; transition:all .18s; }
     .svc-nav a:hover, .svc-nav a.active { color:var(--svc-black); background:var(--svc-gold); box-shadow:0 6px 18px rgba(0,0,0,0.35); }
-
-    /* ===== HERO (Black) ===== */
-    .svc-hero {
-      background:
-        linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.4) 100%),
-        radial-gradient(800px 200px at 10% 10%, rgba(212,175,55,0.06), transparent 20%),
-        linear-gradient(90deg, rgba(0,0,0,0.6), rgba(0,0,0,0.6));
-      padding:64px 20px;
-      color:var(--svc-white);
-      text-align:center;
-    }
-    .svc-hero .svc-wrap { display:grid; gap:18px; align-items:center; }
-    .svc-hero h1{
-      font-size:40px; line-height:1.03; font-weight:700; letter-spacing:-0.5px;
-    }
-    .svc-hero p{
-      margin-top:8px; color:rgba(255,255,255,0.9); max-width:880px; margin-left:auto; margin-right:auto;
-    }
-    .svc-hero .svc-hero-cta{
-      display:inline-grid; margin-top:20px;
-    }
-    .svc-btn-primary{
-      display:inline-block; background:var(--svc-gold); color:var(--svc-black);
-      padding:12px 22px; border-radius:10px; font-weight:700; transition:all .18s; box-shadow:0 6px 20px rgba(212,175,55,0.12);
-    }
+    .svc-hero { background: linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.4) 100%); padding:64px 20px; color:var(--svc-white); text-align:center; }
+    .svc-hero h1{ font-size:40px; line-height:1.03; font-weight:700; letter-spacing:-0.5px; }
+    .svc-hero p{ margin-top:8px; color:rgba(255,255,255,0.9); max-width:880px; margin-left:auto; margin-right:auto; }
+    .svc-btn-primary{ display:inline-block; background:var(--svc-gold); color:var(--svc-black); padding:12px 22px; border-radius:10px; font-weight:700; transition:all .18s; box-shadow:0 6px 20px rgba(212,175,55,0.12);}
     .svc-btn-primary:hover{ transform:translateY(-4px); box-shadow:0 12px 35px rgba(212,175,55,0.18) }
-
-    /* ===== SERVICES SECTION (White background) ===== */
-    .svc-services-area{
-      background:var(--svc-white);
-      border-top-left-radius:28px;
-      border-top-right-radius:28px;
-      margin-top:-20px; /* overlaps hero container for premium feel */
-      padding:48px 20px 80px;
-      color:var(--svc-black);
-      box-shadow: 0 -20px 60px rgba(0,0,0,0.18);
-    }
-    .svc-services-header {
-      max-width:1100px; margin:0 auto 26px; text-align:center;
-    }
+    .svc-services-area{ background:var(--svc-white); border-top-left-radius:28px; border-top-right-radius:28px; margin-top:-20px; padding:48px 20px 80px; color:var(--svc-black); box-shadow: 0 -20px 60px rgba(0,0,0,0.18); }
+    .svc-services-header { max-width:1100px; margin:0 auto 26px; text-align:center; }
     .svc-services-header h2 { font-size:28px; margin-bottom:8px; font-weight:700; color:var(--svc-black) }
     .svc-services-header p { color:var(--svc-muted); font-size:15px }
-
-    /* ===== Alternating rows ===== */
-    .svc-service-row {
-      max-width:1100px; margin:28px auto; display:grid;
-      grid-template-columns: 1fr 1fr; gap:28px; align-items:center;
-      padding:22px; border-radius:16px;
-      background:linear-gradient(180deg, #fff, #fff);
-      transition:transform .22s, box-shadow .22s;
-    }
-    .svc-service-row + .svc-service-row { margin-top:18px; }
-
+    .svc-service-row { max-width:1100px; margin:28px auto; display:grid; grid-template-columns: 1fr 1fr; gap:28px; align-items:center; padding:22px; border-radius:16px; background:linear-gradient(180deg, #fff, #fff); transition:transform .22s, box-shadow .22s; }
     .svc-service-row:hover { transform:translateY(-6px); box-shadow:0 18px 45px rgba(0,0,0,0.07) }
-
-    /* image column */
-    .svc-figure {
-      display:flex; align-items:center; justify-content:center;
-      padding:18px;
-    }
-    .svc-figure .svc-art {
-      width:100%; max-width:520px; border-radius:12px; overflow:hidden;
-      border:1px solid rgba(0,0,0,0.04); background:linear-gradient(180deg,#0b0b0b 0%, #0b0b0b 100%);
-      box-shadow: 0 6px 22px rgba(0,0,0,0.05);
-    }
-
-    /* text column */
-    .svc-body {
-      padding:10px 6px;
-    }
-    .svc-kicker{
-      display:inline-block; font-size:13px; font-weight:700; color:var(--svc-gold); letter-spacing:0.6px; margin-bottom:10px;
-    }
+    .svc-figure { display:flex; align-items:center; justify-content:center; padding:18px; }
+    .svc-figure .svc-art { width:100%; max-width:520px; border-radius:12px; overflow:hidden; border:1px solid rgba(0,0,0,0.04); background:linear-gradient(180deg,#0b0b0b 0%, #0b0b0b 100%); box-shadow: 0 6px 22px rgba(0,0,0,0.05); }
+    .svc-body { padding:10px 6px; }
+    .svc-kicker{ display:inline-block; font-size:13px; font-weight:700; color:var(--svc-gold); letter-spacing:0.6px; margin-bottom:10px; }
     .svc-title { font-size:22px; font-weight:800; margin-bottom:10px; color:var(--svc-black) }
     .svc-desc { color:var(--svc-muted); font-size:15px; margin-bottom:16px; }
     .svc-actions { display:flex; gap:12px; align-items:center; flex-wrap:wrap; }
-    .svc-link {
-      padding:10px 16px; border-radius:10px; font-weight:700; border:2px solid var(--svc-gold);
-      color:var(--svc-gold); background:transparent; transition:all .16s;
-    }
+    .svc-link { padding:10px 16px; border-radius:10px; font-weight:700; border:2px solid var(--svc-gold); color:var(--svc-gold); background:transparent; transition:all .16s; }
     .svc-link:hover { background:var(--svc-gold); color:var(--svc-black); transform:translateY(-3px) }
     .svc-ghost { padding:10px 14px; border-radius:10px; background:#f7f7f7; font-weight:700; color:var(--svc-muted); border:1px solid #efefef; }
-
-    /* ===== REVERSE (image right/text left) ===== */
     .svc-reverse { direction:ltr; }
     .svc-reverse .svc-figure { order:2 }
     .svc-reverse .svc-body { order:1 }
-
-    /* ===== Card inner: faux-code SVG styling ===== */
-    .svc-code-wrap {
-      display:grid; gap:0; align-items:stretch;
-    }
-    .svc-code {
-      padding:22px; background:linear-gradient(180deg,#060606,#0b0b0b);
-      color:#cfd8dc; font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
-      font-size:13px; line-height:1.4;
-    }
-    .svc-code .ln { display:block; padding:2px 8px; opacity:0.95 }
-    .svc-code .tag { color:#D4AF37; font-weight:700 }
-    .svc-code .attr { color:#9ad3ff }
-    .svc-code .val { color:#ffd29f }
-    .svc-code .comment { color:#5b5f66; font-style:italic }
-
-    /* small device */
-    @media (max-width:900px){
-      .svc-service-row { grid-template-columns: 1fr; gap:14px; padding:16px; }
-      .svc-figure { order:0 }
-      .svc-reverse .svc-figure { order:0 }
-      .svc-hero h1 { font-size:30px }
-      .svc-hero { padding:44px 18px }
-    }
-
-    /* ===== CTA & Footer ===== */
-    .svc-cta-strip {
-      max-width:1100px; margin:40px auto 18px; text-align:center;
-      padding:32px; border-radius:12px; display:flex; gap:18px; align-items:center; justify-content:space-between;
-      background: linear-gradient(90deg, rgba(212,175,55,0.12), rgba(212,175,55,0.04));
-    }
-    .svc-cta-strip .left { text-align:left }
-    .svc-cta-strip h3 { font-size:18px; color:var(--svc-black); margin-bottom:6px }
-    .svc-cta-strip p { color:var(--svc-muted); font-size:14px }
-
-    .svc-footer {
-      background:var(--svc-black); color:var(--svc-white); text-align:center; padding:26px 20px; margin-top:30px; font-size:13px;
-    }
+    @media (max-width:900px){ .svc-service-row { grid-template-columns: 1fr; gap:14px; padding:16px; } .svc-figure { order:0 } .svc-reverse .svc-figure { order:0 } .svc-hero h1 { font-size:30px } .svc-hero { padding:44px 18px } }
+    .svc-footer { background:var(--svc-black); color:var(--svc-white); text-align:center; padding:26px 20px; margin-top:30px; font-size:13px; }
   </style>
 </head>
 <body>
@@ -195,7 +70,7 @@
       <div class="svc-logo">Samiat <span>Nexus</span></div>
       <nav class="svc-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
-        <a href="services.html>" class="active">Services</a>
+        <a href="services.html" class="active">Services</a>
         <a href="packages.html">Packages</a>
         <a href="why-choose-us.html">Why Choose Us</a>
         <a href="contact.html">Contact</a>
@@ -203,7 +78,7 @@
     </div>
   </header>
 
-  <!-- HERO (Black) -->
+  <!-- HERO -->
   <section class="svc-hero" aria-labelledby="svc-hero-title">
     <div class="svc-wrap">
       <h1 id="svc-hero-title">Premium Digital Services — Crafted For Growth</h1>
@@ -212,678 +87,114 @@
     </div>
   </section>
 
-  <!-- SERVICES (white surface) -->
+  <!-- SERVICES -->
   <main class="svc-services-area" aria-labelledby="svc-services-title">
     <header class="svc-services-header">
       <h2 id="svc-services-title">Our Services</h2>
       <p>We deliver end-to-end digital products — design, development, marketing and media — with enterprise polish and agency agility.</p>
     </header>
-    
-    
 
-<!-- 1: DIGITAL MARKETING (Image left) -->
-   <section class="svc-service-row" data-aos="fade-right">
-  <!-- SVG Illustration -->
-  <figure class="svc-figure" aria-hidden="true">
-    <div class="svc-art" role="img" aria-label="Digital Marketing animated illustration">
-      <svg xmlns="http://www.w3.org/2000/svg" width="420" height="300" viewBox="0 0 420 300">
-        <defs>
-          <!-- Background gradient -->
-          <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-            <stop offset="0" stop-color="#05060a"/>
-            <stop offset="1" stop-color="#0a0f1a"/>
-          </linearGradient>
-
-          <!-- Neon gradient -->
-          <linearGradient id="glow" x1="0" x2="1">
-            <stop offset="0" stop-color="#00f0ff"/>
-            <stop offset="1" stop-color="#b066ff"/>
-          </linearGradient>
-
-          <!-- Soft glow filter -->
-          <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="20" result="blur"/>
-            <feBlend in="SourceGraphic" in2="blur" mode="screen"/>
-          </filter>
-
-          <!-- Edge neon glow -->
-          <filter id="edgeLight" x="-50%" y="-50%" width="200%" height="200%">
-            <feDropShadow dx="0" dy="0" stdDeviation="15" flood-color="#00f0ff" flood-opacity="1"/>
-          </filter>
-
-          <!-- Neon text style -->
-          <style>
-            .neonText { font-family: Poppins, sans-serif; fill:#00f0ff; font-weight:700; }
-            .float { animation: float 3s infinite ease-in-out alternate; transform-origin: center; }
-            @keyframes float { 0% { transform: translateY(0) rotate(0deg);} 50% { transform: translateY(-6px) rotate(10deg);} 100% { transform: translateY(0) rotate(0deg);} }
-
-            .bar { fill:#00f0ff; }
-            .bar-animate { animation: bounce 2s infinite ease-in-out; transform-origin: bottom; }
-            @keyframes bounce { 0%, 100% { transform: scaleY(0.4);} 50% { transform: scaleY(1);} }
-          </style>
-        </defs>
-
-        <!-- Background -->
-        <rect width="420" height="300" fill="url(#bg)"/>
-
-        <!-- Ambient glow under megaphone -->
-        <ellipse cx="210" cy="220" rx="160" ry="40" fill="#00f0ff" opacity="0.14" filter="url(#softGlow)">
-          <animate attributeName="opacity" values="0.14;0.3;0.14" dur="2s" repeatCount="indefinite"/>
-        </ellipse>
-
-        <!-- Megaphone group -->
-        <g transform="translate(100,60)">
-          <!-- Megaphone body -->
-          <polygon points="0,40 80,10 80,70 0,100" fill="#0f1825" stroke="url(#glow)" stroke-width="4" filter="url(#edgeLight)"/>
-          <!-- Megaphone bell -->
-          <polygon points="80,10 140,0 140,80 80,70" fill="url(#glow)" opacity="0.15">
-            <animate attributeName="opacity" values="0.15;0.35;0.15" dur="2s" repeatCount="indefinite"/>
-          </polygon>
-          <!-- Sound waves -->
-          <path d="M140,10 Q180,40 140,70" stroke="#00f0ff" stroke-width="2" fill="none">
-            <animate attributeName="stroke-width" values="2;4;2" dur="1.5s" repeatCount="indefinite"/>
-          </path>
-          <path d="M150,5 Q190,40 150,75" stroke="#b066ff" stroke-width="1.5" fill="none">
-            <animate attributeName="stroke-width" values="1.5;3;1.5" dur="1.5s" repeatCount="indefinite"/>
-          </path>
-
-          <!-- Animated chart inside megaphone bell -->
-          <g transform="translate(90,20)">
-            <rect class="bar bar-animate" x="0" y="30" width="8" height="30" rx="2"/>
-            <rect class="bar bar-animate" x="15" y="20" width="8" height="40" rx="2" style="animation-delay:0.2s"/>
-            <rect class="bar bar-animate" x="30" y="25" width="8" height="35" rx="2" style="animation-delay:0.4s"/>
-            <rect class="bar bar-animate" x="45" y="15" width="8" height="45" rx="2" style="animation-delay:0.6s"/>
-          </g>
-
-          <!-- Floating neon icons -->
-          <circle class="float" cx="50" cy="-20" r="8" fill="#00f0ff" filter="url(#softGlow)"/>
-          <circle class="float" cx="90" cy="-10" r="6" fill="#b066ff" filter="url(#softGlow)"/>
-          <circle class="float" cx="130" cy="0" r="7" fill="#00f0ff" filter="url(#softGlow)"/>
-
-          <!-- Neon reflection -->
-          <rect x="2" y="2" width="138" height="78" rx="6" fill="none" stroke="url(#glow)" stroke-width="2" opacity="0.25">
-            <animate attributeName="opacity" values="0.2;0.4;0.2" dur="2s" repeatCount="indefinite"/>
-          </rect>
-        </g>
-
-        <!-- Floating tech nodes -->
-        <circle class="float" cx="360" cy="50" r="16" fill="url(#glow)" filter="url(#softGlow)"/>
-        <circle class="float" cx="60" cy="140" r="12" fill="url(#glow)" filter="url(#softGlow)"/>
-        <circle class="float" cx="380" cy="260" r="14" fill="url(#glow)" filter="url(#softGlow)"/>
-
-        <!-- Connecting path -->
-        <path d="M360,50 L380,260 L60,140" stroke="#9fb0c6" stroke-width="2" stroke-linecap="round" opacity="0.1"/>
-
-        <!-- Caption -->
-        <text x="210" y="290" text-anchor="middle" font-size="20" class="neonText" filter="url(#softGlow)">
-          DIGITAL MARKETING
-        </text>
-      </svg>
-    </div>
-  </figure>
-
-  <!-- Service Text Content -->
-  <div class="svc-body">
-    <div class="svc-kicker">DIGITAL MARKETING</div>
-    <h3 class="svc-title">SEO, SMM & Campaigns</h3>
-    <p class="svc-desc">Reach your target audience with data-driven marketing strategies that boost traffic, leads, and conversions.</p>
-    <div class="svc-actions">
-      <a class="svc-link" href="contact.html">Start Campaign</a>
-      <span class="svc-ghost">Marketing Audit</span>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- 2: WEB DEVELOPMENT (Premium SVG) -->
-<section class="svc-service-row svc-reverse" data-aos="fade-left">
-  <figure class="svc-figure" aria-hidden="true">
-    <div class="svc-art" role="img" aria-label="Web development premium illustration">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" width="100%" height="100%" role="img">
-        <defs>
-          <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-            <stop offset="0" stop-color="#05060a"/>
-            <stop offset="1" stop-color="#0a0f1a"/>
-          </linearGradient>
-
-          <linearGradient id="glow" x1="0" x2="1" y1="0" y2="0">
-            <stop offset="0" stop-color="#00f0ff"/>
-            <stop offset="1" stop-color="#b066ff"/>
-          </linearGradient>
-
-          <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="40" result="blur"/>
-            <feBlend in="SourceGraphic" in2="blur" mode="screen"/>
-          </filter>
-
-          <filter id="edgeLight" x="-50%" y="-50%" width="200%" height="200%">
-            <feDropShadow dx="0" dy="0" stdDeviation="20" flood-color="#00f0ff" flood-opacity="1"/>
-          </filter>
-
-          <style>
-            .neonText { font-family: Poppins, sans-serif; fill:#00f0ff; font-weight:700; }
-          </style>
-        </defs>
-
-        <!-- Background -->
-        <rect width="1400" height="900" fill="url(#bg)"/>
-
-        <!-- Outer Aura -->
-        <ellipse cx="700" cy="480" rx="470" ry="180" fill="#00f0ff" opacity="0.14" filter="url(#softGlow)"/>
-
-        <!-- Laptop base -->
-        <path d="M260 620h880l-60 80H320l-60-80z" fill="#0b0f18" filter="url(#softGlow)"/>
-
-        <!-- Laptop screen -->
-        <rect x="320" y="180" width="760" height="430" rx="28" fill="#0f1825" stroke="url(#glow)" stroke-width="6" filter="url(#edgeLight)"/>
-
-        <!-- Inner screen glow -->
-        <rect x="340" y="200" width="720" height="390" rx="18" fill="url(#glow)" opacity="0.11"/>
-
-        <!-- Neon floating code symbol -->
-        <g transform="translate(700 395)" filter="url(#softGlow)">
-          <path d="M-180 -40 L-110 -120 M-180 -40 L-110 40" stroke="#00f0ff" stroke-width="32" stroke-linecap="round"/>
-          <path d="M180 -40 L110 -120 M180 -40 L110 40" stroke="#b066ff" stroke-width="32" stroke-linecap="round"/>
-          <rect x="-14" y="-160" width="28" height="320" rx="14" fill="white"/>
-        </g>
-
-        <!-- Horizontal energy beams -->
-        <rect x="380" y="490" width="640" height="10" rx="5" fill="#00f0ff" opacity="0.6"/>
-        <rect x="360" y="520" width="680" height="8" rx="4" fill="#b066ff" opacity="0.5"/>
-
-        <!-- Keyboard glow -->
-        <ellipse cx="700" cy="700" rx="340" ry="50" fill="#00f0ff" opacity="0.22" filter="url(#softGlow)"/>
-
-        <!-- Tech nodes -->
-        <circle cx="1180" cy="220" r="24" fill="url(#glow)" filter="url(#softGlow)"/>
-        <circle cx="250" cy="260" r="20" fill="url(#glow)" filter="url(#softGlow)"/>
-        <circle cx="1150" cy="660" r="18" fill="url(#glow)" filter="url(#softGlow)"/>
-
-        <!-- Title -->
-        <text x="700" y="850" text-anchor="middle" font-size="48" class="neonText" filter="url(#softGlow)">
-          WEB DEVELOPMENT
-        </text>
-      </svg>
-    </div>
-  </figure>
-
-  <div class="svc-body">
-    <div class="svc-kicker">WEB DEVELOPMENT</div>
-    <h3 class="svc-title">Fast, Secure & Conversion-ready Sites</h3>
-    <p class="svc-desc">Build high-performance websites with stunning design, responsive layouts, and seamless user experience.</p>
-    <div class="svc-actions">
-      <a class="svc-link" href="contact.html">Request Proposal</a>
-      <span class="svc-ghost">Hosting & Speed Audit</span>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- 3: APP DEVELOPMENT (Animated) -->
-<section class="svc-service-row" data-aos="fade-right">
-  <figure class="svc-figure" aria-hidden="true">
-    <div class="svc-art" role="img" aria-label="App development animated illustration">
-      <svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
-        <style>
-          /* App icons bounce animation */
-          .icon {
-            animation: bounce 1.5s infinite ease-in-out;
-          }
-          .icon:nth-child(2) { animation-delay: 0.2s; }
-          .icon:nth-child(3) { animation-delay: 0.4s; }
-          .icon:nth-child(4) { animation-delay: 0.6s; }
-          .icon:nth-child(5) { animation-delay: 0.8s; }
-          .icon:nth-child(6) { animation-delay: 1s; }
-          .icon:nth-child(7) { animation-delay: 1.2s; }
-          .icon:nth-child(8) { animation-delay: 1.4s; }
-          .icon:nth-child(9) { animation-delay: 1.6s; }
-
-          @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-          }
-
-          /* Screen glow pulse */
-          .screen-glow {
-            animation: pulse 2s infinite ease-in-out;
-          }
-          @keyframes pulse {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 0.2; }
-          }
-
-          /* Tech glow scale */
-          .tech-glow {
-            transform-origin: center;
-            animation: glowScale 3s infinite ease-in-out;
-          }
-          @keyframes glowScale {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-          }
-        </style>
-
-        <!-- Background -->
-        <rect width="400" height="300" rx="20" fill="#000"/>
-
-        <!-- Desk Shadow -->
-        <ellipse cx="200" cy="270" rx="70" ry="12" fill="#000" opacity="0.2"/>
-
-        <!-- Smartphone Body -->
-        <rect x="150" y="80" width="100" height="180" rx="25" fill="url(#phoneGradient)" stroke="#444" stroke-width="2"/>
-
-        <!-- Screen -->
-        <rect x="160" y="90" width="80" height="160" rx="20" fill="#111" stroke="#333" stroke-width="1.5"/>
-        <rect class="screen-glow" x="160" y="90" width="80" height="160" rx="20" fill="url(#screenGlow)"/>
-
-        <!-- App Icons Grid -->
-        <g id="app-icons">
-          <rect class="icon" x="170" y="100" width="16" height="16" rx="4" fill="#00f0ff"/>
-          <rect class="icon" x="190" y="100" width="16" height="16" rx="4" fill="#ff33cc"/>
-          <rect class="icon" x="210" y="100" width="16" height="16" rx="4" fill="#ffdd00"/>
-          <rect class="icon" x="170" y="120" width="16" height="16" rx="4" fill="#00ff99"/>
-          <rect class="icon" x="190" y="120" width="16" height="16" rx="4" fill="#ff6600"/>
-          <rect class="icon" x="210" y="120" width="16" height="16" rx="4" fill="#33ccff"/>
-          <rect class="icon" x="170" y="140" width="16" height="16" rx="4" fill="#ff33aa"/>
-          <rect class="icon" x="190" y="140" width="16" height="16" rx="4" fill="#00cc66"/>
-          <rect class="icon" x="210" y="140" width="16" height="16" rx="4" fill="#cc33ff"/>
-        </g>
-
-        <!-- Tech Glow Background -->
-        <circle class="tech-glow" cx="200" cy="160" r="100" fill="url(#techGlow)" opacity="0.1"/>
-
-        <!-- Gradients -->
-        <defs>
-          <!-- Screen Glow Gradient -->
-          <linearGradient id="screenGlow" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.5"/>
-            <stop offset="100%" stop-color="#0066ff" stop-opacity="0.2"/>
-          </linearGradient>
-
-          <!-- Phone Body Gradient -->
-          <linearGradient id="phoneGradient" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#3a3a3a"/>
-            <stop offset="100%" stop-color="#1e1e1e"/>
-          </linearGradient>
-
-          <!-- Tech Glow Gradient -->
-          <radialGradient id="techGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.3"/>
-            <stop offset="100%" stop-color="#1e1e1e" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
-      </svg>
-    </div>
-  </figure>
-
-  <div class="svc-body">
-    <div class="svc-kicker">APP DEVELOPMENT</div>
-    <h3 class="svc-title">Robust Mobile & Web Apps</h3>
-    <p class="svc-desc">Cross-platform apps, progressive web apps, backend APIs, and analytics integrations for measurable user growth.</p>
-    <div class="svc-actions">
-      <a class="svc-link" href="contact.html">Build an App</a>
-      <span class="svc-ghost">Tech Discovery</span>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- 4: GRAPHIC DESIGN (Animated & Organized) -->
-  <section class="svc-service-row svc-reverse" data-aos="fade-left">
-  <!-- SVG Illustration -->
-  <figure class="svc-figure" aria-hidden="true">
-    <div class="svc-art" role="img" aria-label="Graphic design animated illustration">
-      <svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
-
-        <!-- ====== STYLES & ANIMATIONS ====== -->
-        <style>
-          /* Floating shapes animation */
-          .float {
-            animation: float 3s infinite ease-in-out alternate;
-            transform-origin: center;
-          }
-          @keyframes float {
-            0% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-8px) rotate(15deg); }
-            100% { transform: translateY(0) rotate(0deg); }
-          }
-
-          /* Pen tip glow pulse */
-          .pen-tip {
-            animation: pulse 1.5s infinite ease-in-out;
-            transform-origin: center;
-          }
-          @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.25); opacity: 1; }
-          }
-
-          /* Tech glow pulse */
-          .tech-glow {
-            transform-origin: center;
-            animation: glowScale 3s infinite ease-in-out;
-          }
-          @keyframes glowScale {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.08); }
-          }
-
-          /* Shadow pulse */
-          .shadow {
-            animation: shadowPulse 3s infinite ease-in-out;
-            transform-origin: center;
-          }
-          @keyframes shadowPulse {
-            0%, 100% { opacity: 0.25; }
-            50% { opacity: 0.35; }
-          }
-
-          /* Brush stroke animation */
-          .brush {
-            stroke-dasharray: 100;
-            stroke-dashoffset: 100;
-            animation: draw 2s infinite linear;
-          }
-          @keyframes draw {
-            0% { stroke-dashoffset: 100; }
-            100% { stroke-dashoffset: 0; }
-          }
-        </style>
-
-        <!-- ====== BACKGROUND ====== -->
-        <rect width="400" height="300" rx="20" fill="#000"/>
-
-        <!-- Shadow under tablet -->
-        <ellipse class="shadow" cx="200" cy="260" rx="80" ry="15" fill="#000" opacity="0.25"/>
-
-        <!-- Tablet 3D Body -->
-        <rect x="120" y="80" width="160" height="120" rx="12" fill="url(#tabletGradient)" stroke="#555" stroke-width="2"/>
-
-        <!-- Tablet Screen -->
-        <rect x="130" y="90" width="140" height="100" rx="10" fill="#111" stroke="#333" stroke-width="1.5"/>
-        <rect x="130" y="90" width="140" height="100" rx="10" fill="url(#screenGlow)"/>
-        <rect x="130" y="90" width="140" height="100" rx="10" fill="url(#screenReflection)" opacity="0.25"/>
-
-        <!-- Stylus/Pen -->
-        <rect x="200" y="60" width="6" height="40" rx="3" fill="#ff33cc" transform="rotate(-45 200 60)"/>
-        <circle class="pen-tip" cx="203" cy="57" r="4" fill="#fff"/>
-
-        <!-- Floating shapes with neon glow -->
-        <circle class="float" cx="160" cy="120" r="8" fill="#00f0ff" filter="url(#glow)"/>
-        <rect class="float" x="210" y="110" width="12" height="12" rx="3" fill="#ffdd00" filter="url(#glow)"/>
-        <polygon class="float" points="180,150 185,160 175,160" fill="#ff33cc" filter="url(#glow)"/>
-        <rect class="float" x="195" y="130" width="20" height="4" rx="2" fill="#00ff99" filter="url(#glow)"/>
-        <circle class="float" cx="230" cy="140" r="6" fill="#33ccff" filter="url(#glow)"/>
-        <polygon class="float" points="220,115 225,125 215,125" fill="#ff9900" filter="url(#glow)"/>
-
-        <!-- Animated brush strokes -->
-        <path class="brush" d="M140,100 Q160,110 180,105" stroke="#ff33cc" stroke-width="2" fill="none"/>
-        <path class="brush" d="M150,120 Q180,130 210,120" stroke="#00f0ff" stroke-width="2" fill="none"/>
-        <path class="brush" d="M160,140 Q190,150 220,140" stroke="#ffdd00" stroke-width="2" fill="none"/>
-
-        <!-- Tech Glow Background -->
-        <circle class="tech-glow" cx="200" cy="150" r="100" fill="url(#techGlow)" opacity="0.15"/>
-
-        <!-- ====== GRADIENTS & FILTERS ====== -->
-        <defs>
-          <!-- Tablet Gradient -->
-          <linearGradient id="tabletGradient" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#3a3a3a"/>
-            <stop offset="100%" stop-color="#1e1e1e"/>
-          </linearGradient>
-
-          <!-- Screen Glow -->
-          <linearGradient id="screenGlow" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.5"/>
-            <stop offset="100%" stop-color="#0066ff" stop-opacity="0.2"/>
-          </linearGradient>
-
-          <!-- Screen Reflection -->
-          <linearGradient id="screenReflection" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#fff" stop-opacity="0.35"/>
-            <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
-          </linearGradient>
-
-          <!-- Tech Glow Gradient -->
-          <radialGradient id="techGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.35"/>
-            <stop offset="100%" stop-color="#1e1e1e" stop-opacity="0"/>
-          </radialGradient>
-
-          <!-- Neon Glow Filter for shapes -->
-          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="4" result="blur"/>
-            <feMerge>
-              <feMergeNode in="blur"/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          </filter>
-        </defs>
-      </svg>
-    </div>
-  </figure>
-
-  <!-- Service Text Content -->
-  <div class="svc-body">
-    <div class="svc-kicker">GRAPHIC DESIGN</div>
-    <h3 class="svc-title">Branding & Visual Identity</h3>
-    <p class="svc-desc">Logo systems, brand guidelines, UI assets, motion graphics, and ad creatives — everything for a consistent premium identity.</p>
-    <div class="svc-actions">
-      <a class="svc-link" href="contact.html">Request Brand Kit</a>
-      <span class="svc-ghost">Identity Workshop</span>
-    </div>
-  </div>
-</section>
-
-
-
-<!--5: SEO & SMM Section -->
-<section class="svc-service-row" data-aos="fade-right">
-  <!-- SVG Illustration -->
-  <figure class="svc-figure" aria-hidden="true">
-    <div class="svc-art" role="img" aria-label="SEO & SMM animated illustration">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="100%" height="100%">
-        <!-- Background -->
-        <rect width="900" height="500" rx="16" fill="#0b0b0b"/>
-
-        <!-- Gradients -->
-        <defs>
-          <linearGradient id="grad-yellow" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#FFD700"/>
-            <stop offset="100%" stop-color="#D4AF37"/>
-          </linearGradient>
-          <linearGradient id="grad-cyan" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#00f0ff"/>
-            <stop offset="100%" stop-color="#0066ff"/>
-          </linearGradient>
-          <linearGradient id="grad-pink" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#ff33cc"/>
-            <stop offset="100%" stop-color="#9900ff"/>
-          </linearGradient>
-          <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
-            <feDropShadow dx="2" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.5"/>
-          </filter>
-        </defs>
-
-        <!-- Animated SEO & Social Bars -->
-        <g filter="url(#shadow)">
-          <!-- Keyword Ranking Bar -->
-          <rect x="180" y="200" width="60" height="200" rx="8" fill="url(#grad-yellow)">
-            <animate attributeName="y" values="200;140;200" dur="2s" repeatCount="indefinite"/>
-            <animate attributeName="height" values="200;260;200" dur="2s" repeatCount="indefinite"/>
-          </rect>
-
-          <!-- Content Publishing Bar -->
-          <rect x="360" y="180" width="60" height="220" rx="8" fill="url(#grad-cyan)">
-            <animate attributeName="y" values="180;120;180" dur="2.4s" repeatCount="indefinite"/>
-            <animate attributeName="height" values="220;280;220" dur="2.4s" repeatCount="indefinite"/>
-          </rect>
-
-          <!-- Community Engagement Bar -->
-          <rect x="540" y="150" width="60" height="250" rx="8" fill="url(#grad-pink)">
-            <animate attributeName="y" values="150;90;150" dur="2.6s" repeatCount="indefinite"/>
-            <animate attributeName="height" values="250;310;250" dur="2.6s" repeatCount="indefinite"/>
-          </rect>
-        </g>
-
-        <!-- Axes -->
-        <line x1="100" y1="400" x2="800" y2="400" stroke="#ccc" stroke-width="3"/>
-        <line x1="100" y1="100" x2="100" y2="400" stroke="#ccc" stroke-width="3"/>
-      </svg>
-    </div>
-  </figure>
-
-  <!-- Service Text Content -->
-  <div class="svc-body">
-    <div class="svc-kicker">SEO & SMM</div>
-    <h3 class="svc-title">Search & Social Growth</h3>
-    <p class="svc-desc">Technical SEO, content strategy, social-first creatives and community playbooks to improve visibility and engagement.</p>
-    <div class="svc-actions">
-      <a class="svc-link" href="contact.html">Improve Rankings</a>
-      <span class="svc-ghost">SEO Audit</span>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- 6: VIDEO EDITING (Animated & Organized) -->
-<section class="svc-service-row svc-reverse" data-aos="fade-left">
-  <!-- SVG Illustration -->
-  <figure class="svc-figure" aria-hidden="true">
-    <div class="svc-art" role="img" aria-label="Video editing animated illustration">
-      <svg xmlns="http://www.w3.org/2000/svg" width="420" height="300" viewBox="0 0 420 300">
-        <defs>
-          <!-- Background gradient -->
-          <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-            <stop offset="0" stop-color="#05060a"/>
-            <stop offset="1" stop-color="#0a0f1a"/>
-          </linearGradient>
-
-          <!-- Neon gradient for strokes and glow -->
-          <linearGradient id="glow" x1="0" x2="1">
-            <stop offset="0" stop-color="#00f0ff"/>
-            <stop offset="1" stop-color="#b066ff"/>
-          </linearGradient>
-
-          <!-- Soft glow filter -->
-          <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="20" result="blur"/>
-            <feBlend in="SourceGraphic" in2="blur" mode="screen"/>
-          </filter>
-
-          <!-- Edge light / neon shadow -->
-          <filter id="edgeLight" x="-50%" y="-50%" width="200%" height="200%">
-            <feDropShadow dx="0" dy="0" stdDeviation="15" flood-color="#00f0ff" flood-opacity="1"/>
-          </filter>
-
-          <!-- Neon text style -->
-          <style>
-            .neonText { font-family: Poppins, sans-serif; fill:#00f0ff; font-weight:700; }
-          </style>
-        </defs>
-
-        <!-- Background -->
-        <rect width="420" height="300" fill="url(#bg)"/>
-
-        <!-- Ambient glow under monitor -->
-        <ellipse cx="210" cy="220" rx="160" ry="40" fill="#00f0ff" opacity="0.14" filter="url(#softGlow)">
-          <animate attributeName="opacity" values="0.14;0.3;0.14" dur="2s" repeatCount="indefinite"/>
-        </ellipse>
-
-        <!-- Monitor group -->
-        <g transform="translate(70,50)">
-          <!-- Monitor body -->
-          <rect x="0" y="0" width="280" height="180" rx="24" fill="#0f1825" stroke="url(#glow)" stroke-width="6" filter="url(#edgeLight)"/>
-
-          <!-- Monitor screen -->
-          <rect x="16" y="16" width="248" height="148" rx="16" fill="url(#glow)" opacity="0.12">
-            <animate attributeName="opacity" values="0.12;0.25;0.12" dur="2s" repeatCount="indefinite"/>
-          </rect>
-
-          <!-- Play button inside screen -->
-          <polygon points="140,60 160,75 140,90" fill="#00f0ff" filter="url(#softGlow)">
-            <animateTransform attributeName="transform" type="scale" values="1;1.15;1" dur="1.5s" repeatCount="indefinite" additive="sum" origin="150 75"/>
-            <animateTransform attributeName="transform" type="rotate" values="0;5;0;-5;0" dur="3s" repeatCount="indefinite" additive="sum" origin="150 75"/>
-          </polygon>
-
-          <!-- Timeline bar -->
-          <rect x="50" y="120" width="148" height="6" rx="3" fill="#b066ff">
-            <animate attributeName="width" values="148;140;148" dur="2s" repeatCount="indefinite"/>
-          </rect>
-          <!-- Playhead -->
-          <circle cx="50" cy="123" r="5" fill="#00f0ff">
-            <animate attributeName="cx" values="50;180;50" dur="2s" repeatCount="indefinite"/>
-          </circle>
-
-          <!-- Neon reflection on monitor -->
-          <rect x="8" y="8" width="264" height="164" rx="20" fill="none" stroke="url(#glow)" stroke-width="2" opacity="0.25">
-            <animate attributeName="opacity" values="0.2;0.4;0.2" dur="2s" repeatCount="indefinite"/>
-          </rect>
-        </g>
-
-        <!-- Floating tech nodes -->
-        <circle cx="360" cy="40" r="16" fill="url(#glow)" filter="url(#softGlow)">
-          <animateTransform attributeName="transform" type="translate" values="0,0;0,5;0,0" dur="2s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="60" cy="120" r="12" fill="url(#glow)" filter="url(#softGlow)">
-          <animateTransform attributeName="transform" type="translate" values="0,0;0,-4;0,0" dur="1.8s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="380" cy="250" r="14" fill="url(#glow)" filter="url(#softGlow)">
-          <animateTransform attributeName="transform" type="translate" values="0,0;0,6;0,0" dur="2.2s" repeatCount="indefinite"/>
-        </circle>
-
-        <!-- Tech node connection path -->
-        <path d="M360,40 L380,250 L60,120" stroke="#9fb0c6" stroke-width="2" stroke-linecap="round" opacity="0.1"/>
-
-        <!-- Caption -->
-        <text x="210" y="290" text-anchor="middle" font-size="20" class="neonText" filter="url(#softGlow)">
-          VIDEO EDITING
-        </text>
-      </svg>
-    </div>
-  </figure>
-
-  <!-- Service Text Content -->
-  <div class="svc-body">
-    <div class="svc-kicker">VIDEO EDITING</div>
-    <h3 class="svc-title">Dynamic Video & Motion Graphics</h3>
-    <p class="svc-desc">Cutting-edge video editing, animations, motion graphics, and post-production — everything to bring your vision to life.</p>
-    <div class="svc-actions">
-      <a class="svc-link" href="contact.html">Request Demo</a>
-      <span class="svc-ghost">Editing Workshop</span>
-    </div>
-  </div>
-</section>
-
-
-
-    <!-- CTA strip -->
-    <div class="svc-cta-strip" data-aos="fade-up">
-      <div class="left">
-        <h3>Ready to start something premium?</h3>
-        <p>Book a one-on-one strategy call — we’ll propose an actionable plan in 48 hours.</p>
+    <!-- Services Rows -->
+    <!-- DIGITAL MARKETING -->
+    <section class="svc-service-row" data-aos="fade-right">
+      <figure class="svc-figure">
+        <div class="svc-art" aria-hidden="true">
+          <img src="assets/digital-marketing.svg" alt="Digital Marketing Illustration" loading="lazy" />
+        </div>
+      </figure>
+      <div class="svc-body">
+        <div class="svc-kicker">Digital Marketing</div>
+        <h3 class="svc-title">Grow Your Brand Online</h3>
+        <p class="svc-desc">From social media campaigns to Google Ads, we boost your brand visibility and engagement.</p>
+        <div class="svc-actions"><a class="svc-link" href="contact.html">Hire Us</a></div>
       </div>
-      <div class="right">
-        <a class="svc-btn-primary" href="contact.html">Book Strategy Call</a>
+    </section>
+
+    <!-- WEB DEVELOPMENT -->
+    <section class="svc-service-row svc-reverse" data-aos="fade-left">
+      <figure class="svc-figure">
+        <div class="svc-art" aria-hidden="true">
+          <img src="assets/web-development.svg" alt="Web Development Illustration" loading="lazy" />
+        </div>
+      </figure>
+      <div class="svc-body">
+        <div class="svc-kicker">Web Development</div>
+        <h3 class="svc-title">Responsive & Modern Websites</h3>
+        <p class="svc-desc">We build high-performance websites using the latest technologies that deliver great UX and SEO-friendly code.</p>
+        <div class="svc-actions"><a class="svc-link" href="contact.html">Hire Us</a></div>
       </div>
-    </div>
+    </section>
+
+    <!-- APP DEVELOPMENT -->
+    <section class="svc-service-row" data-aos="fade-right">
+      <figure class="svc-figure">
+        <div class="svc-art" aria-hidden="true">
+          <img src="assets/app-development.svg" alt="App Development Illustration" loading="lazy" />
+        </div>
+      </figure>
+      <div class="svc-body">
+        <div class="svc-kicker">App Development</div>
+        <h3 class="svc-title">Mobile Apps that Delight</h3>
+        <p class="svc-desc">We craft intuitive and high-quality mobile applications for Android and iOS platforms.</p>
+        <div class="svc-actions"><a class="svc-link" href="contact.html">Hire Us</a></div>
+      </div>
+    </section>
+
+    <!-- GRAPHIC DESIGN -->
+    <section class="svc-service-row svc-reverse" data-aos="fade-left">
+      <figure class="svc-figure">
+        <div class="svc-art" aria-hidden="true">
+          <img src="assets/graphic-design.svg" alt="Graphic Design Illustration" loading="lazy" />
+        </div>
+      </figure>
+      <div class="svc-body">
+        <div class="svc-kicker">Graphic Design</div>
+        <h3 class="svc-title">Visuals that Impress</h3>
+        <p class="svc-desc">Our creative team produces stunning graphics for brands, social media, and marketing campaigns.</p>
+        <div class="svc-actions"><a class="svc-link" href="contact.html">Hire Us</a></div>
+      </div>
+    </section>
+
+    <!-- SEO & SMM -->
+    <section class="svc-service-row" data-aos="fade-right">
+      <figure class="svc-figure">
+        <div class="svc-art" aria-hidden="true">
+          <img src="assets/seo-smm.svg" alt="SEO & SMM Illustration" loading="lazy" />
+        </div>
+      </figure>
+      <div class="svc-body">
+        <div class="svc-kicker">SEO & SMM</div>
+        <h3 class="svc-title">Boost Organic Traffic</h3>
+        <p class="svc-desc">We optimize your website and social channels to attract and engage more customers effectively.</p>
+        <div class="svc-actions"><a class="svc-link" href="contact.html">Hire Us</a></div>
+      </div>
+    </section>
+
+    <!-- VIDEO EDITING -->
+    <section class="svc-service-row svc-reverse" data-aos="fade-left">
+      <figure class="svc-figure">
+        <div class="svc-art" aria-hidden="true">
+          <img src="assets/video-editing.svg" alt="Video Editing Illustration" loading="lazy" />
+        </div>
+      </figure>
+      <div class="svc-body">
+        <div class="svc-kicker">Video Editing</div>
+        <h3 class="svc-title">Engaging Video Content</h3>
+        <p class="svc-desc">From promotional videos to social media reels, we create captivating content that converts.</p>
+        <div class="svc-actions"><a class="svc-link" href="contact.html">Hire Us</a></div>
+      </div>
+    </section>
   </main>
 
   <!-- FOOTER -->
   <footer class="svc-footer">
-    © 2025 Samiat Nexus — All Rights Reserved
+    &copy; 2025 Samiat Nexus. All rights reserved.
   </footer>
 
-  <script src="js/responsive.js"></script>
-
-  <!-- AOS init -->
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      AOS.init({ duration: 800, once: true });
+    AOS.init({
+      duration: 1000,
+      once: true
     });
   </script>
 </body>
