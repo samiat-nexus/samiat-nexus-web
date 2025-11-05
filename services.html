@@ -219,102 +219,57 @@
     
 
 <!-- 1: DIGITAL MARKETING (Image left) -->
-   <section class="svc-service-row" data-aos="fade-right">
+<section class="svc-service-row" data-aos="fade-right">
   <!-- SVG Illustration -->
   <figure class="svc-figure" aria-hidden="true">
-    <div class="svc-art" role="img" aria-label="Digital Marketing animated illustration">
-      <svg xmlns="http://www.w3.org/2000/svg" width="420" height="300" viewBox="0 0 420 300">
+    <div class="svc-art" role="img" aria-label="SEO & SMM animated illustration">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="100%" height="100%">
+        <!-- Background -->
+        <rect width="900" height="500" rx="16" fill="#0b0b0b"/>
+
+        <!-- Gradients -->
         <defs>
-          <!-- Background gradient -->
-          <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-            <stop offset="0" stop-color="#05060a"/>
-            <stop offset="1" stop-color="#0a0f1a"/>
+          <linearGradient id="grad-yellow" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#FFD700"/>
+            <stop offset="100%" stop-color="#D4AF37"/>
           </linearGradient>
-
-          <!-- Neon gradient -->
-          <linearGradient id="glow" x1="0" x2="1">
-            <stop offset="0" stop-color="#00f0ff"/>
-            <stop offset="1" stop-color="#b066ff"/>
+          <linearGradient id="grad-cyan" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#00f0ff"/>
+            <stop offset="100%" stop-color="#0066ff"/>
           </linearGradient>
-
-          <!-- Soft glow filter -->
-          <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="20" result="blur"/>
-            <feBlend in="SourceGraphic" in2="blur" mode="screen"/>
+          <linearGradient id="grad-pink" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#ff33cc"/>
+            <stop offset="100%" stop-color="#9900ff"/>
+          </linearGradient>
+          <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="2" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.5"/>
           </filter>
-
-          <!-- Edge neon glow -->
-          <filter id="edgeLight" x="-50%" y="-50%" width="200%" height="200%">
-            <feDropShadow dx="0" dy="0" stdDeviation="15" flood-color="#00f0ff" flood-opacity="1"/>
-          </filter>
-
-          <!-- Neon text style -->
-          <style>
-            .neonText { font-family: Poppins, sans-serif; fill:#00f0ff; font-weight:700; }
-            .float { animation: float 3s infinite ease-in-out alternate; transform-origin: center; }
-            @keyframes float { 0% { transform: translateY(0) rotate(0deg);} 50% { transform: translateY(-6px) rotate(10deg);} 100% { transform: translateY(0) rotate(0deg);} }
-
-            .bar { fill:#00f0ff; }
-            .bar-animate { animation: bounce 2s infinite ease-in-out; transform-origin: bottom; }
-            @keyframes bounce { 0%, 100% { transform: scaleY(0.4);} 50% { transform: scaleY(1);} }
-          </style>
         </defs>
 
-        <!-- Background -->
-        <rect width="420" height="300" fill="url(#bg)"/>
+        <!-- Animated Digital Marketing Bars -->
+        <g filter="url(#shadow)">
+          <!-- Keyword Ranking Bar -->
+          <rect x="180" y="200" width="60" height="200" rx="8" fill="url(#grad-yellow)">
+            <animate attributeName="y" values="200;140;200" dur="2s" repeatCount="indefinite"/>
+            <animate attributeName="height" values="200;260;200" dur="2s" repeatCount="indefinite"/>
+          </rect>
 
-        <!-- Ambient glow under megaphone -->
-        <ellipse cx="210" cy="220" rx="160" ry="40" fill="#00f0ff" opacity="0.14" filter="url(#softGlow)">
-          <animate attributeName="opacity" values="0.14;0.3;0.14" dur="2s" repeatCount="indefinite"/>
-        </ellipse>
+          <!-- Content Publishing Bar -->
+          <rect x="360" y="180" width="60" height="220" rx="8" fill="url(#grad-cyan)">
+            <animate attributeName="y" values="180;120;180" dur="2.4s" repeatCount="indefinite"/>
+            <animate attributeName="height" values="220;280;220" dur="2.4s" repeatCount="indefinite"/>
+          </rect>
 
-        <!-- Megaphone group -->
-        <g transform="translate(100,60)">
-          <!-- Megaphone body -->
-          <polygon points="0,40 80,10 80,70 0,100" fill="#0f1825" stroke="url(#glow)" stroke-width="4" filter="url(#edgeLight)"/>
-          <!-- Megaphone bell -->
-          <polygon points="80,10 140,0 140,80 80,70" fill="url(#glow)" opacity="0.15">
-            <animate attributeName="opacity" values="0.15;0.35;0.15" dur="2s" repeatCount="indefinite"/>
-          </polygon>
-          <!-- Sound waves -->
-          <path d="M140,10 Q180,40 140,70" stroke="#00f0ff" stroke-width="2" fill="none">
-            <animate attributeName="stroke-width" values="2;4;2" dur="1.5s" repeatCount="indefinite"/>
-          </path>
-          <path d="M150,5 Q190,40 150,75" stroke="#b066ff" stroke-width="1.5" fill="none">
-            <animate attributeName="stroke-width" values="1.5;3;1.5" dur="1.5s" repeatCount="indefinite"/>
-          </path>
-
-          <!-- Animated chart inside megaphone bell -->
-          <g transform="translate(90,20)">
-            <rect class="bar bar-animate" x="0" y="30" width="8" height="30" rx="2"/>
-            <rect class="bar bar-animate" x="15" y="20" width="8" height="40" rx="2" style="animation-delay:0.2s"/>
-            <rect class="bar bar-animate" x="30" y="25" width="8" height="35" rx="2" style="animation-delay:0.4s"/>
-            <rect class="bar bar-animate" x="45" y="15" width="8" height="45" rx="2" style="animation-delay:0.6s"/>
-          </g>
-
-          <!-- Floating neon icons -->
-          <circle class="float" cx="50" cy="-20" r="8" fill="#00f0ff" filter="url(#softGlow)"/>
-          <circle class="float" cx="90" cy="-10" r="6" fill="#b066ff" filter="url(#softGlow)"/>
-          <circle class="float" cx="130" cy="0" r="7" fill="#00f0ff" filter="url(#softGlow)"/>
-
-          <!-- Neon reflection -->
-          <rect x="2" y="2" width="138" height="78" rx="6" fill="none" stroke="url(#glow)" stroke-width="2" opacity="0.25">
-            <animate attributeName="opacity" values="0.2;0.4;0.2" dur="2s" repeatCount="indefinite"/>
+          <!-- Community Engagement Bar -->
+          <rect x="540" y="150" width="60" height="250" rx="8" fill="url(#grad-pink)">
+            <animate attributeName="y" values="150;90;150" dur="2.6s" repeatCount="indefinite"/>
+            <animate attributeName="height" values="250;310;250" dur="2.6s" repeatCount="indefinite"/>
           </rect>
         </g>
 
-        <!-- Floating tech nodes -->
-        <circle class="float" cx="360" cy="50" r="16" fill="url(#glow)" filter="url(#softGlow)"/>
-        <circle class="float" cx="60" cy="140" r="12" fill="url(#glow)" filter="url(#softGlow)"/>
-        <circle class="float" cx="380" cy="260" r="14" fill="url(#glow)" filter="url(#softGlow)"/>
-
-        <!-- Connecting path -->
-        <path d="M360,50 L380,260 L60,140" stroke="#9fb0c6" stroke-width="2" stroke-linecap="round" opacity="0.1"/>
-
-        <!-- Caption -->
-        <text x="210" y="290" text-anchor="middle" font-size="20" class="neonText" filter="url(#softGlow)">
-          DIGITAL MARKETING
-        </text>
+        <!-- Axes -->
+        <line x1="100" y1="400" x2="800" y2="400" stroke="#ccc" stroke-width="3"/>
+        <line x1="100" y1="100" x2="100" y2="400" stroke="#ccc" stroke-width="3"/>
       </svg>
     </div>
   </figure>
@@ -421,96 +376,72 @@
 <!-- 3: APP DEVELOPMENT (Animated) -->
 <section class="svc-service-row" data-aos="fade-right">
   <figure class="svc-figure" aria-hidden="true">
-    <div class="svc-art" role="img" aria-label="App development animated illustration">
-      <svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
-        <style>
-          /* App icons bounce animation */
-          .icon {
-            animation: bounce 1.5s infinite ease-in-out;
-          }
-          .icon:nth-child(2) { animation-delay: 0.2s; }
-          .icon:nth-child(3) { animation-delay: 0.4s; }
-          .icon:nth-child(4) { animation-delay: 0.6s; }
-          .icon:nth-child(5) { animation-delay: 0.8s; }
-          .icon:nth-child(6) { animation-delay: 1s; }
-          .icon:nth-child(7) { animation-delay: 1.2s; }
-          .icon:nth-child(8) { animation-delay: 1.4s; }
-          .icon:nth-child(9) { animation-delay: 1.6s; }
+    <div class="svc-art" role="img" aria-label="App development premium illustration">
 
-          @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-          }
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" width="100%" height="100%" role="img">
+        <defs>
+          <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#05060a"/>
+            <stop offset="1" stop-color="#0a0f1a"/>
+          </linearGradient>
 
-          /* Screen glow pulse */
-          .screen-glow {
-            animation: pulse 2s infinite ease-in-out;
-          }
-          @keyframes pulse {
-            0%, 100% { opacity: 0.5; }
-            50% { opacity: 0.2; }
-          }
+          <linearGradient id="glow" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="#00f0ff"/>
+            <stop offset="1" stop-color="#b066ff"/>
+          </linearGradient>
 
-          /* Tech glow scale */
-          .tech-glow {
-            transform-origin: center;
-            animation: glowScale 3s infinite ease-in-out;
-          }
-          @keyframes glowScale {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-          }
-        </style>
+          <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="40" result="blur"/>
+            <feBlend in="SourceGraphic" in2="blur" mode="screen"/>
+          </filter>
+
+          <filter id="edgeLight" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="0" dy="0" stdDeviation="20" flood-color="#00f0ff" flood-opacity="1"/>
+          </filter>
+
+          <style>
+            .neonText { font-family: Poppins, sans-serif; fill:#00f0ff; font-weight:700; }
+          </style>
+        </defs>
 
         <!-- Background -->
-        <rect width="400" height="300" rx="20" fill="#000"/>
+        <rect width="1400" height="900" fill="url(#bg)"/>
 
-        <!-- Desk Shadow -->
-        <ellipse cx="200" cy="270" rx="70" ry="12" fill="#000" opacity="0.2"/>
+        <!-- Outer Aura -->
+        <ellipse cx="700" cy="480" rx="470" ry="180" fill="#00f0ff" opacity="0.14" filter="url(#softGlow)"/>
 
-        <!-- Smartphone Body -->
-        <rect x="150" y="80" width="100" height="180" rx="25" fill="url(#phoneGradient)" stroke="#444" stroke-width="2"/>
+        <!-- Laptop base -->
+        <path d="M260 620h880l-60 80H320l-60-80z" fill="#0b0f18" filter="url(#softGlow)"/>
 
-        <!-- Screen -->
-        <rect x="160" y="90" width="80" height="160" rx="20" fill="#111" stroke="#333" stroke-width="1.5"/>
-        <rect class="screen-glow" x="160" y="90" width="80" height="160" rx="20" fill="url(#screenGlow)"/>
+        <!-- Laptop screen -->
+        <rect x="320" y="180" width="760" height="430" rx="28" fill="#0f1825" stroke="url(#glow)" stroke-width="6" filter="url(#edgeLight)"/>
 
-        <!-- App Icons Grid -->
-        <g id="app-icons">
-          <rect class="icon" x="170" y="100" width="16" height="16" rx="4" fill="#00f0ff"/>
-          <rect class="icon" x="190" y="100" width="16" height="16" rx="4" fill="#ff33cc"/>
-          <rect class="icon" x="210" y="100" width="16" height="16" rx="4" fill="#ffdd00"/>
-          <rect class="icon" x="170" y="120" width="16" height="16" rx="4" fill="#00ff99"/>
-          <rect class="icon" x="190" y="120" width="16" height="16" rx="4" fill="#ff6600"/>
-          <rect class="icon" x="210" y="120" width="16" height="16" rx="4" fill="#33ccff"/>
-          <rect class="icon" x="170" y="140" width="16" height="16" rx="4" fill="#ff33aa"/>
-          <rect class="icon" x="190" y="140" width="16" height="16" rx="4" fill="#00cc66"/>
-          <rect class="icon" x="210" y="140" width="16" height="16" rx="4" fill="#cc33ff"/>
+        <!-- Inner screen glow -->
+        <rect x="340" y="200" width="720" height="390" rx="18" fill="url(#glow)" opacity="0.11"/>
+
+        <!-- Neon floating code symbol -->
+        <g transform="translate(700 395)" filter="url(#softGlow)">
+          <path d="M-180 -40 L-110 -120 M-180 -40 L-110 40" stroke="#00f0ff" stroke-width="32" stroke-linecap="round"/>
+          <path d="M180 -40 L110 -120 M180 -40 L110 40" stroke="#b066ff" stroke-width="32" stroke-linecap="round"/>
+          <rect x="-14" y="-160" width="28" height="320" rx="14" fill="white"/>
         </g>
 
-        <!-- Tech Glow Background -->
-        <circle class="tech-glow" cx="200" cy="160" r="100" fill="url(#techGlow)" opacity="0.1"/>
+        <!-- Horizontal energy beams -->
+        <rect x="380" y="490" width="640" height="10" rx="5" fill="#00f0ff" opacity="0.6"/>
+        <rect x="360" y="520" width="680" height="8" rx="4" fill="#b066ff" opacity="0.5"/>
 
-        <!-- Gradients -->
-        <defs>
-          <!-- Screen Glow Gradient -->
-          <linearGradient id="screenGlow" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.5"/>
-            <stop offset="100%" stop-color="#0066ff" stop-opacity="0.2"/>
-          </linearGradient>
+        <!-- Keyboard glow -->
+        <ellipse cx="700" cy="700" rx="340" ry="50" fill="#00f0ff" opacity="0.22" filter="url(#softGlow)"/>
 
-          <!-- Phone Body Gradient -->
-          <linearGradient id="phoneGradient" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#3a3a3a"/>
-            <stop offset="100%" stop-color="#1e1e1e"/>
-          </linearGradient>
+        <!-- Tech nodes -->
+        <circle cx="1180" cy="220" r="24" fill="url(#glow)" filter="url(#softGlow)"/>
+        <circle cx="250" cy="260" r="20" fill="url(#glow)" filter="url(#softGlow)"/>
+        <circle cx="1150" cy="660" r="18" fill="url(#glow)" filter="url(#softGlow)"/>
 
-          <!-- Tech Glow Gradient -->
-          <radialGradient id="techGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.3"/>
-            <stop offset="100%" stop-color="#1e1e1e" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
+        <!-- Title -->
+        <text x="700" y="850" text-anchor="middle" font-size="48" class="neonText" filter="url(#softGlow)">
+          APP DEVELOPMENT
+        </text>
       </svg>
     </div>
   </figure>
