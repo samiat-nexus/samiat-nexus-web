@@ -1,16 +1,27 @@
-function toggleButtons() {
-  const desktopBtns = document.querySelector('.desktop-buttons');
-  const sidebarBtns = document.querySelector('.sidebar-buttons');
+document.addEventListener("DOMContentLoaded", function () {
+  const heroButtons = document.querySelector(".hero-buttons");
+  const sidebar = document.querySelector(".sidebar");
 
-  if (window.innerWidth <= 768) { // Mobile
-    desktopBtns.style.display = 'none';
-    sidebarBtns.style.display = 'flex';
-  } else { // Desktop
-    desktopBtns.style.display = 'flex';
-    sidebarBtns.style.display = 'none';
+  function moveButtons() {
+    if (window.innerWidth <= 768) {
+      // Move buttons into sidebar on mobile
+      if (!sidebar.querySelector(".hero-buttons")) {
+        sidebar.appendChild(heroButtons);
+        heroButtons.style.display = "block"; // show in sidebar
+      }
+    } else {
+      // Move buttons back to hero section on desktop
+      const heroContent = document.querySelector(".hero-content");
+      if (!heroContent.querySelector(".hero-buttons")) {
+        heroContent.appendChild(heroButtons);
+        heroButtons.style.display = "flex"; // original layout
+      }
+    }
   }
-}
 
-// Run on page load and window resize
-window.addEventListener('load', toggleButtons);
-window.addEventListener('resize', toggleButtons);
+  // Run once on page load
+  moveButtons();
+
+  // Run on window resize
+  window.addEventListener("resize", moveButtons);
+});
