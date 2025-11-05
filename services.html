@@ -528,137 +528,59 @@
 
 
 
-<!-- 4: GRAPHIC DESIGN (Animated & Organized) -->
-  <section class="svc-service-row svc-reverse" data-aos="fade-left">
+<!--4: GRAPHIC DESIGN (Animated & Organized) ) -->
+<section class="svc-service-row svc-reverse" data-aos="fade-left">
   <!-- SVG Illustration -->
   <figure class="svc-figure" aria-hidden="true">
     <div class="svc-art" role="img" aria-label="Graphic design animated illustration">
-      <svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+      <!-- Using the exact same SEO & SMM SVG -->
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" width="100%" height="100%">
+        <!-- Background -->
+        <rect width="900" height="500" rx="16" fill="#0b0b0b"/>
 
-        <!-- ====== STYLES & ANIMATIONS ====== -->
-        <style>
-          /* Floating shapes animation */
-          .float {
-            animation: float 3s infinite ease-in-out alternate;
-            transform-origin: center;
-          }
-          @keyframes float {
-            0% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-8px) rotate(15deg); }
-            100% { transform: translateY(0) rotate(0deg); }
-          }
-
-          /* Pen tip glow pulse */
-          .pen-tip {
-            animation: pulse 1.5s infinite ease-in-out;
-            transform-origin: center;
-          }
-          @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.25); opacity: 1; }
-          }
-
-          /* Tech glow pulse */
-          .tech-glow {
-            transform-origin: center;
-            animation: glowScale 3s infinite ease-in-out;
-          }
-          @keyframes glowScale {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.08); }
-          }
-
-          /* Shadow pulse */
-          .shadow {
-            animation: shadowPulse 3s infinite ease-in-out;
-            transform-origin: center;
-          }
-          @keyframes shadowPulse {
-            0%, 100% { opacity: 0.25; }
-            50% { opacity: 0.35; }
-          }
-
-          /* Brush stroke animation */
-          .brush {
-            stroke-dasharray: 100;
-            stroke-dashoffset: 100;
-            animation: draw 2s infinite linear;
-          }
-          @keyframes draw {
-            0% { stroke-dashoffset: 100; }
-            100% { stroke-dashoffset: 0; }
-          }
-        </style>
-
-        <!-- ====== BACKGROUND ====== -->
-        <rect width="400" height="300" rx="20" fill="#000"/>
-
-        <!-- Shadow under tablet -->
-        <ellipse class="shadow" cx="200" cy="260" rx="80" ry="15" fill="#000" opacity="0.25"/>
-
-        <!-- Tablet 3D Body -->
-        <rect x="120" y="80" width="160" height="120" rx="12" fill="url(#tabletGradient)" stroke="#555" stroke-width="2"/>
-
-        <!-- Tablet Screen -->
-        <rect x="130" y="90" width="140" height="100" rx="10" fill="#111" stroke="#333" stroke-width="1.5"/>
-        <rect x="130" y="90" width="140" height="100" rx="10" fill="url(#screenGlow)"/>
-        <rect x="130" y="90" width="140" height="100" rx="10" fill="url(#screenReflection)" opacity="0.25"/>
-
-        <!-- Stylus/Pen -->
-        <rect x="200" y="60" width="6" height="40" rx="3" fill="#ff33cc" transform="rotate(-45 200 60)"/>
-        <circle class="pen-tip" cx="203" cy="57" r="4" fill="#fff"/>
-
-        <!-- Floating shapes with neon glow -->
-        <circle class="float" cx="160" cy="120" r="8" fill="#00f0ff" filter="url(#glow)"/>
-        <rect class="float" x="210" y="110" width="12" height="12" rx="3" fill="#ffdd00" filter="url(#glow)"/>
-        <polygon class="float" points="180,150 185,160 175,160" fill="#ff33cc" filter="url(#glow)"/>
-        <rect class="float" x="195" y="130" width="20" height="4" rx="2" fill="#00ff99" filter="url(#glow)"/>
-        <circle class="float" cx="230" cy="140" r="6" fill="#33ccff" filter="url(#glow)"/>
-        <polygon class="float" points="220,115 225,125 215,125" fill="#ff9900" filter="url(#glow)"/>
-
-        <!-- Animated brush strokes -->
-        <path class="brush" d="M140,100 Q160,110 180,105" stroke="#ff33cc" stroke-width="2" fill="none"/>
-        <path class="brush" d="M150,120 Q180,130 210,120" stroke="#00f0ff" stroke-width="2" fill="none"/>
-        <path class="brush" d="M160,140 Q190,150 220,140" stroke="#ffdd00" stroke-width="2" fill="none"/>
-
-        <!-- Tech Glow Background -->
-        <circle class="tech-glow" cx="200" cy="150" r="100" fill="url(#techGlow)" opacity="0.15"/>
-
-        <!-- ====== GRADIENTS & FILTERS ====== -->
+        <!-- Gradients -->
         <defs>
-          <!-- Tablet Gradient -->
-          <linearGradient id="tabletGradient" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#3a3a3a"/>
-            <stop offset="100%" stop-color="#1e1e1e"/>
+          <linearGradient id="grad-yellow" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#FFD700"/>
+            <stop offset="100%" stop-color="#D4AF37"/>
           </linearGradient>
-
-          <!-- Screen Glow -->
-          <linearGradient id="screenGlow" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.5"/>
-            <stop offset="100%" stop-color="#0066ff" stop-opacity="0.2"/>
+          <linearGradient id="grad-cyan" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#00f0ff"/>
+            <stop offset="100%" stop-color="#0066ff"/>
           </linearGradient>
-
-          <!-- Screen Reflection -->
-          <linearGradient id="screenReflection" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#fff" stop-opacity="0.35"/>
-            <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+          <linearGradient id="grad-pink" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#ff33cc"/>
+            <stop offset="100%" stop-color="#9900ff"/>
           </linearGradient>
-
-          <!-- Tech Glow Gradient -->
-          <radialGradient id="techGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.35"/>
-            <stop offset="100%" stop-color="#1e1e1e" stop-opacity="0"/>
-          </radialGradient>
-
-          <!-- Neon Glow Filter for shapes -->
-          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="4" result="blur"/>
-            <feMerge>
-              <feMergeNode in="blur"/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
+          <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feDropShadow dx="2" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.5"/>
           </filter>
         </defs>
+
+        <!-- Animated Graphic Design Bars -->
+        <g filter="url(#shadow)">
+          <!-- Keyword Ranking Bar -->
+          <rect x="180" y="200" width="60" height="200" rx="8" fill="url(#grad-yellow)">
+            <animate attributeName="y" values="200;140;200" dur="2s" repeatCount="indefinite"/>
+            <animate attributeName="height" values="200;260;200" dur="2s" repeatCount="indefinite"/>
+          </rect>
+
+          <!-- Content Publishing Bar -->
+          <rect x="360" y="180" width="60" height="220" rx="8" fill="url(#grad-cyan)">
+            <animate attributeName="y" values="180;120;180" dur="2.4s" repeatCount="indefinite"/>
+            <animate attributeName="height" values="220;280;220" dur="2.4s" repeatCount="indefinite"/>
+          </rect>
+
+          <!-- Community Engagement Bar -->
+          <rect x="540" y="150" width="60" height="250" rx="8" fill="url(#grad-pink)">
+            <animate attributeName="y" values="150;90;150" dur="2.6s" repeatCount="indefinite"/>
+            <animate attributeName="height" values="250;310;250" dur="2.6s" repeatCount="indefinite"/>
+          </rect>
+        </g>
+
+        <!-- Axes -->
+        <line x1="100" y1="400" x2="800" y2="400" stroke="#ccc" stroke-width="3"/>
+        <line x1="100" y1="100" x2="100" y2="400" stroke="#ccc" stroke-width="3"/>
       </svg>
     </div>
   </figure>
@@ -676,7 +598,7 @@
 </section>
 
 
-
+    
 <!--5: SEO & SMM Section -->
 <section class="svc-service-row" data-aos="fade-right">
   <!-- SVG Illustration -->
