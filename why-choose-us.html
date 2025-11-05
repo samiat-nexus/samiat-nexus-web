@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Choose Us | Samiat Nexus</title>
+
+  <!-- Only for this page -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="why-page">
+
+  <!-- Navbar -->
+<header class="svc-header">
+  <div class="svc-navbar svc-wrap">
+    <div class="svc-logo">Samiat <span>Nexus</span></div>
+    <nav class="svc-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="packages.html">Packages</a>
+      <a href="why-choose-us.html>" class="active">Why Choose Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+  <!-- HERO -->
+  <section class="why-hero" data-aos="fade-up">
+    <div class="why-hero-content">
+      <h1>Why Choose Samiat Nexus?</h1>
+      <p>We combine creativity, technology & strategy to help businesses grow faster.</p>
+      <div class="why-hero-highlights">
+        <span>💡 Innovative Solutions</span>
+        <span>🚀 Fast Delivery</span>
+        <span>🤝 Trusted Partners</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="why-features" data-aos="fade-up">
+    <div class="why-features-grid">
+      <div class="why-box">
+        <div class="why-icon">🧑‍💻</div>
+        <h3>Skilled Professionals</h3>
+        <p>Experts in branding, web development, digital marketing & apps.</p>
+      </div>
+
+      <div class="why-box">
+        <div class="why-icon">⚡</div>
+        <h3>Fast & Reliable</h3>
+        <p>We meet deadlines without compromising quality.</p>
+      </div>
+
+      <div class="why-box">
+        <div class="why-icon">📈</div>
+        <h3>Growth Driven</h3>
+        <p>Our strategies increase leads, sales & visibility.</p>
+      </div>
+
+      <div class="why-box">
+        <div class="why-icon">🎯</div>
+        <h3>Brand Identity Focused</h3>
+        <p>We build impactful brands that customers remember.</p>
+      </div>
+
+      <div class="why-box">
+        <div class="why-icon">💬</div>
+        <h3>24/7 Support</h3>
+        <p>Always here to support your concerns & updates.</p>
+      </div>
+
+      <div class="why-box">
+        <div class="why-icon">✅</div>
+        <h3>100% Satisfaction</h3>
+        <p>Your success is our top priority — every project matters.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="why-stats" data-aos="zoom-in">
+    <div class="why-stat">
+      <i class="fas fa-check-circle"></i>
+      <span class="why-count" data-target="50">0</span>+ Projects Completed
+    </div>
+    <div class="why-stat">
+      <i class="fas fa-briefcase"></i>
+      <span class="why-count" data-target="20">0</span>+ Business Clients
+    </div>
+    <div class="why-stat">
+      <i class="fas fa-award"></i>
+      <span class="why-count" data-target="3">0</span>+ Years Experience
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="why-testimonials" data-aos="fade-up">
+    <h2>What Our Clients Say</h2>
+    <div class="why-testimonial-slider">
+      <div class="why-testimonial">
+        <p>"Samiat Nexus transformed our brand and boosted our online leads!"</p>
+        <h4>- John Doe, CEO</h4>
+      </div>
+      <div class="why-testimonial">
+        <p>"Amazing service & timely delivery. Highly recommend!"</p>
+        <h4>- Jane Smith, Marketing Head</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="why-cta" data-aos="fade-up">
+    <h2>Let’s Build Something Amazing!</h2>
+    <a href="contact.html" class="why-btn-cta">Contact Now →</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="why-footer">
+    <div class="why-footer-content">
+      <p>© 2025 Samiat Nexus — All Rights Reserved.</p>
+      <div class="why-social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+</div> <!-- .why-page -->
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 900, once: true });
+
+  const counters = document.querySelectorAll('.why-count');
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+      const increment = target / 100;
+      if(count < target){
+        counter.innerText = Math.ceil(count + increment);
+        setTimeout(updateCount, 25);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    updateCount();
+  });
+</script>
+
+</body>
+</html>
