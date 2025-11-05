@@ -185,6 +185,47 @@ font-weight: 600;
   color: #fff;
 }
 
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, #ffb347, #ffcc33); /* Gradient background */
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  margin: 40px auto;
+  max-width: 800px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.cta-section p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+.cta-section a {
+  display: inline-block;
+  background-color: #fff;
+  color: #ff6600;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-section a:hover {
+  background-color: #ff6600;
+  color: #fff;
+  transform: scale(1.05);
+}
+
 /* Hero Lighting */
 .hero-graphics {
   width: 350px;
