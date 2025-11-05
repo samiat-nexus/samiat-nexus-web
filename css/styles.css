@@ -279,26 +279,6 @@ footer a:hover {
   }
 }
 
-/* Hero Lighting */
-.hero-graphics {
-  width: 350px;
-  height: 350px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #ffd900, #ffd900);
-  filter: blur(60px);
-  position: absolute;
-  right: 8%;
-  top: 22%;
-  opacity: 0.55;
-  animation: float 5s infinite ease-in-out;
-}
-
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-18px); }
-  100% { transform: translateY(0px); }
-}
-
 /* -------------------------
 WHY CHOOSE US
 ------------------------- */
