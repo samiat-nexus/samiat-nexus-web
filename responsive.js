@@ -1,27 +1,21 @@
+// ===== CREATE MOBILE SIDEBAR DYNAMICALLY =====
 document.addEventListener("DOMContentLoaded", function () {
-  const heroButtons = document.querySelector(".hero-buttons");
-  const sidebar = document.querySelector(".sidebar");
-  const heroContent = document.querySelector(".hero-content");
+  if (window.innerWidth <= 991) {
+    // Create sidebar container
+    const sidebar = document.createElement("div");
+    sidebar.classList.add("mobile-sidebar");
 
-  function updateButtons() {
-    if (window.innerWidth <= 768) {
-      // Move hero buttons inside sidebar if not already there
-      if (heroButtons.parentElement !== sidebar) {
-        sidebar.appendChild(heroButtons);
-        heroButtons.style.display = "block"; // stack vertically
-      }
-    } else {
-      // Move hero buttons back to hero section on desktop
-      if (heroButtons.parentElement !== heroContent) {
-        heroContent.appendChild(heroButtons);
-        heroButtons.style.display = "flex"; // original layout
-      }
-    }
+    // Clone navbar links
+    const navLinks = document.querySelector(".svc-nav").cloneNode(true);
+
+    // Clone hero buttons
+    const heroBtns = document.querySelector(".hero-buttons").cloneNode(true);
+
+    // Append both to sidebar
+    sidebar.appendChild(navLinks);
+    sidebar.appendChild(heroBtns);
+
+    // Append sidebar to body
+    document.body.appendChild(sidebar);
   }
-
-  // Initial run
-  updateButtons();
-
-  // Update on window resize
-  window.addEventListener("resize", updateButtons);
 });
