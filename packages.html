@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Packages | Samiat Nexus</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+
+/* ===== Global Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.svc-header {
+  background: #000000;
+  padding: 18px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 110;
+  backdrop-filter: blur(6px);
+}
+
+.svc-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.svc-logo {
+  font-weight: 700;
+  font-size: 20px;
+  color: #ffffff;
+  letter-spacing: 0.2px;
+}
+
+.svc-logo span {
+  color: #D4AF37;
+}
+
+.svc-nav {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.svc-nav a {
+  color: #ffffff;
+  opacity: 0.85;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.18s;
+  font-family: Inter, "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+font-weight: 600;
+}
+
+.svc-nav a:hover,
+.svc-nav a.active {
+  color: #000000;
+  background: #D4AF37;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* ===== Header ===== */
+.header {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #000000, #000000);
+  color: #fff;
+}
+
+.header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.header p {
+  font-size: 1.2rem;
+}
+
+/* ===== Section Title ===== */
+.section-title {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 900;
+  margin: 60px 0 40px 0;
+  color: #222;
+  width: 100%;
+}
+
+/* Gradient underline */
+.section-title::after {
+  content: '';
+  display: block;
+  width: 180px;
+  height: 6px;
+  background: linear-gradient(90deg, #32cd32, #007bff, #ffd700);
+  margin: 15px auto 0;
+  border-radius: 3px;
+}
+
+/* ===== Packages Grid ===== */
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ===== Package Card ===== */
+.package-card {
+  background-color: #fff;
+  border-radius: 15px;
+  border: 2px solid #eee;
+  padding: 30px 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.package-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Package Title ===== */
+.package-card h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.package-type {
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 6px 15px;
+  border-radius: 25px;
+  display: inline-block;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.package-basic { background-color: #32cd32; } /* Green */
+.package-standard { background-color: #007bff; } /* Blue */
+.package-premium { background-color: #ffd700; color: #000; } /* Gold */
+
+/* ===== Package Details ===== */
+.package-card ul {
+  list-style: none;
+  margin-top: 15px;
+  padding-left: 0;
+}
+
+.package-card ul li {
+  margin: 12px 0;
+  font-size: 0.95rem;
+  position: relative;
+  padding-left: 30px;
+}
+
+.package-card ul li::before {
+  content: "✔️";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* ===== Price & CTA ===== */
+.package-card .price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.package-card .cta {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  border-radius: 50px;
+  background-color: #000;
+  color: #ffd700;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.package-card .cta:hover {
+  background-color: #ffd700;
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .header h1 { font-size: 2.2rem; }
+  .section-title { font-size: 2.8rem; }
+  .package-card { padding: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="svc-header">
+  <div class="svc-navbar svc-wrap">
+    <div class="svc-logo">Samiat <span>Nexus</span></div>
+    <nav class="svc-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="packages.html>" class="active">Packages</a>
+      <a href="why-choose-us.html">Why Choose Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Header -->
+<div class="header">
+  <h1>Our Packages</h1>
+  <p>Choose the best solution to grow your business online.</p>
+</div>
+
+<!-- Section Title -->
+<div class="section-title">Web Development</div>
+
+<!-- Web Development Packages Grid -->
+<div class="packages-grid">
+
+  <!-- Basic Package -->
+  <div class="package-card">
+    <span class="package-type package-basic">Basic</span>
+    <h2>Basic Website Development</h2>
+    <ul>
+      <li>Up to 5 Pages</li>
+      <li>One-Time On-Page SEO</li>
+      <li>Website Speed Optimization</li>
+      <li>3 Blog Posts</li>
+      <li>Mobile Responsive & Clean Design</li>
+      
+    </ul>
+    <div class="price">$99</div>
+    <a href="https://forms.gle/vGnaUtpUNYJsLS6n9" class="cta">Book Now</a>
+  </div>
+
+  <!-- Standard Package -->
+  <div class="package-card">
+    <span class="package-type package-standard">Standard</span>
+    <h2>Standard Website Development</h2>
+    <ul>
+      <li>Up to 7 Pages</li>
+      <li>Advanced On-Page SEO</li>
+      <li>Speed & Performance Optimization</li>
+      <li>5 Blog Posts</li>
+      <li>Mobile Responsive & Clean Design</li>
+      <li>Contact Form & Google Map</li>
+      <li>Basic Security Setup</li>
+    </ul>
+    <div class="price">$200</div>
+    <a href="https://forms.gle/vGnaUtpUNYJsLS6n9" class="cta">Book Now</a>
+  </div>
+
+  <!-- Premium Package -->
+  <div class="package-card">
+    <span class="package-type package-premium">Premium</span>
+    <h2>Premium Website Development</h2>
+    <ul>
+      <li>Up to 10 Pages</li>
+      <li>Full On-Page SEO + GSC Setup</li>
+      <li>Premium Performance Optimization</li>
+      <li>7 Blog Posts</li>
+      <li>Full Responsive Design</li>
+      <li>Security Setup + Email Integration</li>
+      <li>1 Month Free Support</li>
+    </ul>
+    <div class="price">$350</div>
+    <a href="https://forms.gle/vGnaUtpUNYJsLS6n9" class="cta">Book Now</a>
+  </div>
+
+</div>
+
+
+<!-- Section Title -->
+<div class="section-title">App Development</div>
+
+<!-- App Development Packages Grid -->
+<div class="packages-grid">
+
+  <!-- Basic Package -->
+  <div class="package-card">
+    <span class="package-type package-basic">Basic</span>
+    <h2>Basic App Development</h2>
+    <ul>
+      <li>5/7 Screens</li>
+      <li>Authentication (Login/Signup) </li>
+      <li>Database Integration</li>
+      <li>Push Notifications</li>
+      <li>Dynamic Content + CLean UI/UX</li>
+    </ul>
+    <div class="price">$99</div>
+    <a href="https://forms.gle/vGnaUtpUNYJsLS6n9" class="cta">Book Now</a>
+  </div>
+
+  <!-- Standard Package -->
+  <div class="package-card">
+    <span class="package-type package-standard">Standard</span>
+    <h2>Standard App Development</h2>
+    <ul>
+      <li>10 Screens</li>
+      <li>Advanced UI/UX Design</li>
+      <li>Payment Integration</li>
+      <li>Product Listing/Service Booking</li>
+      <li>Admnin Dashboard</li>
+      <li>Analytics & Notifications</li>
+      <li>In-app Chat</li>
+    </ul>
+    <div class="price">$200</div>
+    <a href="https://forms.gle/vGnaUtpUNYJsLS6n9" class="cta">Book Now</a>
+  </div>
+
+  <!-- Premium Package -->
+  <div class="package-card">
+    <span class="package-type package-premium">Premium</span>
+    <h2>Premium App Development</h2>
+    <ul>
+      <li>20 Screens</li>
+      <li>Custom UI/UX & Branding</li>
+      <li>Role-based Admin Panel</li>
+      <li>API Integration</li>
+      <li>Subscription System</li>
+      <li>Full Documentation & Source Code</li>
+      <li>3 Months Free Support</li>
+    </ul>
+    <div class="price">$400</div>
+    <a href="https://forms.gle/vGnaUtpUNYJsLS6n9" class="cta">Book Now</a>
+  </div>
+
+</div>
+
+
+<!-- Section Title -->
+<div class="section-title">Graphic Design</div>
+
+<!-- Graphic Design Packages Grid -->
+<div class="packages-grid">
+
+  <!-- Basic Package -->
+  <div class="package-card">
+    <span class="package-type package-basic">Basic</span>
+    <h2>Basic Graphic Design</h2>
+    <ul>
+      <li>12+ Social Media Graphics</li>
+      <li>Logo/Brand Color Matching</li>
+      <li>2 Highlight Cover</li>
+      <li>Up to 3 Revisions/Post</li>
+      <li>Delivery in JPG + PNG</li>
+    </ul>
+    <div class="price">$41</div>
+    <a href="https://forms.gle/vGnaUtpUNYJsLS6n9" class="cta">Book Now</a>
+  </div>
+
+  <!-- Standard Package -->
+  <div class="package-card">
+    <span class="package-type package-standard">Standard</span>
+    <h2>Standard Graphic Design</h2>
+    <ul>
+      <li>20+ Graphics</li>
+      <li>Carousel Design</li>
+      <li>Poster/Banner</li>
+      <li>Branding Elements Setup</li>
+      <li>Editable Files</li>
+      <li>4 Highlight Cover</li>
+      <li>Up to 5 Revisions/Post</li>
+    </ul>
+    <div class="price">$73</div>
+    <a href="https://forms.gle/vGnaUtpUNYJsLS6n9" class="cta">Book Now</a>
+  </div>
+
+  <!-- Premium Package -->
+  <div class="package-card">
+    <span class="package-type package-premium">Premium</span>
+    <h2>Premium Graphic Design</h2>
+    <ul>
+      <li>30+ Custom Graphics</li>
+      <li>Short Reels/Animations</li>
+      <li>Cover Photo, Profile Setup</li>
+      <li>Story Templates + Highlight Covers</li>
+      <li>Brand Identity Support</li>
+      <li>Editable PSD/AI Files</li>
+      <li>Priority Support + Unlimited Revisions</li>
+    </ul>
+    <div class="price">$127</div>
+    <a href="https://forms.gle/vGnaUtpUNYJsLS6n9" class="cta">Book Now</a>
+  </div>
+
+</div>
+
+
+<!-- Section Title -->
+<div class="section-title">Video Editing</div>
+
+<!-- Video Editing Packages Grid -->
+<div class="packages-grid">
+
+  <!-- Basic Package -->
+  <div class="package-card">
+    <span class="package-type package-basic">Basic</span>
+    <h2>Basic Video Editing</h2>
+    <ul>
+      <li>4+ Edited Videos</li>
+      <li>Brand Colors, Logo Intro/Outro</li>
+      <li>Motion Effects + Subtitles Included</li>
+      <li>2 Revisions/Video</li>
+      <li>Optimized for Social Platforms</li>
+    </ul>
+    <div class="price">$50</div>
+    <a href="https://forms.gle/vGnaUtpUNYJsLS6n9" class="cta">Book Now</a>
+  </div>
+
+  <!-- Standard Package -->
+  <div class="package-card">
+    <span class="package-type package-standard">Standard</span>
+    <h2>Standard Video Editing</h2>
+    <ul>
+      <li>6-8 Edited Videos</li>
+      <li>Cinematic Transitions + Light Effects</li>
+      <li>Logo Animation</li>
+      <li>Music Sync+Voiceover Support</li>
+      <li>Reels, Ads, Product Promo Format</li>
+      <li>3 Revisions/Video</li>
+      <li>Thumbnail & Title Design</li>
+    </ul>
+    <div class="price">$100</div>
+    <a href="https://forms.gle/vGnaUtpUNYJsLS6n9" class="cta">Book Now</a>
+  </div>
+
+  <!-- Premium Package -->
+  <div class="package-card">
+    <span class="package-type package-premium">Premium</span>
+    <h2>Premium Video Editing</h2>
+    <ul>
+      <li>10+ High-Quality Edited Videos</li>
+      <li>Advanced Motion Graphics & Kinetic Text</li>
+      <li>Custom Logo Animation</li>
+      <li>Sound Mixing + Light Correction</li>
+      <li>Script to Video Editing</li>
+      <li>Reels YouTube Shorts, Facebook Ads</li>
+      <li>Unlimited Revisions & Priority Support</li>
+    </ul>
+    <div class="price">$200</div>
+    <a href="https://forms.gle/vGnaUtpUNYJsLS6n9" class="cta">Book Now</a>
+  </div>
+
+</div>
+
+
+<!-- Section Title -->
+<div class="section-title">SEO</div>
+
+<!-- SEO Packages Grid -->
+<div class="packages-grid">
+
+  <!-- Basic Package -->
+  <div class="package-card">
+    <span class="package-type package-basic">Basic</span>
+    <h2>Basic SEO</h2>
+    <ul>
+      <li>Keyword Research (10-15)</li>
+      <li>Meta Tags, Slug, Alt Text, Header Optimization</li>
+      <li>On-Page SEO for up to 5 Pages</li>
+      <li>Google Research Console & Analytics Setup</li>
+      <li>Monthly SEO Progress Report</li>
+    </ul>
+    <div class="price">$53</div>
+    <a href="https://forms.gle/vGnaUtpUNYJsLS6n9" class="cta">Book Now</a>
+  </div>
+
+  <!-- Standard Package -->
+  <div class="package-card">
+    <span class="package-type package-standard">Standard</span>
+    <h2>Standard SEO</h2>
+    <ul>
+      <li>Everything in Basic Package</li>
+      <li>On-Page SEO for up to 10 Pages</li>
+      <li>2 SEO-Optimized Blog Posts</li>
+      <li>Basic Internal Linking</li>
+      <li>Competitor Analysis</li>
+      <li>5 Backlink Strategy</li>
+      <li>Monthly Ranking Report</li>
+    </ul>
+    <div class="price">$110</div>
+    <a href="https://forms.gle/vGnaUtpUNYJsLS6n9" class="cta">Book Now</a>
+  </div>
+
+  <!-- Premium Package -->
+  <div class="package-card">
+    <span class="package-type package-premium">Premium</span>
+    <h2>Premium SEO</h2>
+    <ul>
+      <li>Full On-Page SEO for Entire Site</li>
+      <li>Advanced Keyword Strategy</li>
+      <li>4 Blog Posts/Month</li>
+      <li>15+ Quality Backlinks</li>
+      <li>Technical SEO Fixes</li>
+      <li>Ranking + Analytics Report</li>
+      <li>Schema Markup + Dedicated Support</li>
+    </ul>
+    <div class="price">$180</div>
+    <a href="https://forms.gle/vGnaUtpUNYJsLS6n9" class="cta">Book Now</a>
+  </div>
+
+</div>
+
+
+<!-- Section Title -->
+<div class="section-title">SMM</div>
+
+<!-- SMM Packages Grid -->
+<div class="packages-grid">
+
+  <!-- Basic Package -->
+  <div class="package-card">
+    <span class="package-type package-basic">Basic</span>
+    <h2>Basic SMM</h2>
+    <ul>
+      <li>Page Brabding (On Time Setup)</li>
+      <li>3 Posts Per Week (Total 12/month)</li>
+      <li>Captions with Hashtags</li>
+      <li>2 Reels Per Month</li>
+      <li>Monthly Performance Report</li>
+    </ul>
+    <div class="price">$53</div>
+    <a href="https://forms.gle/vGnaUtpUNYJsLS6n9" class="cta">Book Now</a>
+  </div>
+
+  <!-- Standard Package -->
+  <div class="package-card">
+    <span class="package-type package-standard">Standard</span>
+    <h2>Standard SMM</h2>
+    <ul>
+      <li>Page Branding (Free)</li>
+      <li>5 Posts Per Week (Total 20/month)</li>
+      <li>Captions + Hashtags</li>
+      <li>4 Reels Per Month</li>
+      <li>Story Design</li>
+      <li>Basic Support</li>
+      <li>Monthly Performance Report</li>
+    </ul>
+    <div class="price">$99</div>
+    <a href="https://forms.gle/vGnaUtpUNYJsLS6n9" class="cta">Book Now</a>
+  </div>
+
+  <!-- Premium Package -->
+  <div class="package-card">
+    <span class="package-type package-premium">Premium</span>
+    <h2>Premium SMM</h2>
+    <ul>
+      <li>Full-Page Branding & Optimization</li>
+      <li>7+ Posts Per Week(Total 32/month)</li>
+      <li>Advanced Captions + CTAs</li>
+      <li>8 high-Quality Reels Per Month</li>
+      <li>Story Design + Boosting Consultancy</li>
+      <li>Auto Reply + Bot Setup</li>
+      <li>Engagement Plan + Monthly Growth Analysis</li>
+    </ul>
+    <div class="price">$180</div>
+    <a href="https://forms.gle/vGnaUtpUNYJsLS6n9" class="cta">Book Now</a>
+  </div>
+
+</div>
+
+</body>
+</html>
