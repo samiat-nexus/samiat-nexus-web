@@ -1,8 +1,15 @@
-/* MOBILE SIDEBAR */
+/* Hide desktop buttons on mobile */
+@media (max-width: 991px) {
+  .desktop-buttons {
+    display: none !important;
+  }
+}
+
+/* Mobile Sidebar */
 #mobileSidebar {
   position: fixed;
   top: 0;
-  left: -260px; /* hide by default */
+  left: -260px;
   width: 260px;
   height: 100%;
   background-color: #111;
@@ -49,12 +56,18 @@
   color: #111;
   cursor: pointer;
   z-index: 10000;
-  display: none;
+  display: none; /* hide by default */
 }
 
-/* Show hamburger on mobile only */
 @media (max-width: 991px) {
   #mobileSidebarToggle {
     display: block;
+  }
+}
+
+/* Hide sidebar on desktop */
+@media (min-width: 992px) {
+  #mobileSidebar {
+    display: none !important;
   }
 }
