@@ -15,18 +15,36 @@
 <body>
 
   <!-- ✅ NAVBAR -->
-<header class="svc-header">
-  <div class="svc-navbar svc-wrap">
-    <div class="svc-logo">Samiat <span>Nexus</span></div>
-    <nav class="svc-nav" aria-label="Main navigation">
-      <a href="index.html>" class="active">Home</a>
+  <header class="svc-header">
+    <div class="svc-navbar">
+      <div class="svc-logo">Samiat <span>Nexus</span></div>
+
+      <!-- ✅ Desktop Menu -->
+      <nav class="svc-nav desktop-nav">
+        <a href="index.html" class="active">Home</a>
+        <a href="services.html">Services</a>
+        <a href="packages.html">Packages</a>
+        <a href="why-choose-us.html">Why Choose Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <!-- ✅ Hamburger Button -->
+      <div class="hamburger" id="menuBtn">☰</div>
+    </div>
+
+    <!-- ✅ Sidebar Menu -->
+    <nav class="mobile-sidebar" id="sidebarMenu">
+      <a href="index.html" class="active">Home</a>
       <a href="services.html">Services</a>
       <a href="packages.html">Packages</a>
       <a href="why-choose-us.html">Why Choose Us</a>
       <a href="contact.html">Contact</a>
     </nav>
-  </div>
-</header>
+
+    <!-- ✅ Overlay -->
+    <div class="sidebar-overlay" id="overlay"></div>
+  </header>
+
 
   <!-- ✅ HERO SECTION -->
   <section class="hero">
@@ -43,18 +61,20 @@
   </section>
 
 
-  <!-- ✅ CTA -->
+  <!-- ✅ CTA SECTION -->
   <section class="cta-section" data-aos="zoom-in">
     <h2>Have a Project in Mind?</h2>
     <p>Let’s build success together!</p>
     <a href="contact.html">Contact Us</a>
   </section>
 
- <!-- ✅ FOOTER -->
+
+  <!-- ✅ FOOTER -->
   <footer>
     <p>© 2025 Samiat Nexus. All rights reserved.</p>
   </footer>
-  
+
+
   <!-- ✅ AOS Script -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
