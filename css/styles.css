@@ -187,8 +187,8 @@ font-weight: 600;
 
 /* CTA Section */
 .cta-section {
-  background: linear-gradient(135deg, #ffb347, #ffcc33); /* Gradient background */
-  color: #fff;
+  background: linear-gradient(135deg, #efce27, #efce27); /* Gradient background */
+  color: #000000;
   text-align: center;
   padding: 60px 20px;
   border-radius: 15px;
@@ -211,8 +211,8 @@ font-weight: 600;
 
 .cta-section a {
   display: inline-block;
-  background-color: #fff;
-  color: #ff6600;
+  background-color: #ffffff;
+  color: #000000;
   padding: 12px 30px;
   border-radius: 50px;
   font-weight: 600;
@@ -221,9 +221,62 @@ font-weight: 600;
 }
 
 .cta-section a:hover {
-  background-color: #ff6600;
+  background-color: #000000;
   color: #fff;
   transform: scale(1.05);
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  .cta-section h2 {
+    font-size: 2rem;
+  }
+
+  .cta-section p {
+    font-size: 1rem;
+  }
+
+  .cta-section a {
+    padding: 10px 25px;
+  }
+}
+
+/* Footer */
+footer {
+  background-color: #000000;
+  color: #fff;            
+  text-align: center;
+  padding: 25px 20px;
+  font-size: 0.9rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+  margin: 0;
+  line-height: 1.5;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Optional: make links in footer stand out */
+footer a {
+  color: #ff6600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ffcc33;
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  footer {
+    font-size: 0.85rem;
+    padding: 20px 10px;
+  }
 }
 
 /* Hero Lighting */
