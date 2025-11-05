@@ -1,42 +1,41 @@
-/* ================= MOBILE SIDEBAR ================= */
+/* MOBILE SIDEBAR */
 #mobileSidebar {
   position: fixed;
   top: 0;
-  left: -260px; /* hidden initially */
+  left: -260px; /* hide by default */
   width: 260px;
   height: 100%;
-  background: #111;
-  color: white;
-  overflow-y: auto;
-  transition: left 0.3s ease;
-  z-index: 2000;
+  background-color: #111;
+  color: #fff;
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+  transition: left 0.3s ease;
+  z-index: 9999;
 }
 
 #mobileSidebar.active {
-  left: 0; /* show sidebar */
+  left: 0;
 }
 
 #mobileSidebar a {
   display: block;
   color: white;
   padding: 12px 8px;
-  margin-bottom: 6px;
+  margin: 6px 0;
   text-decoration: none;
   border-radius: 6px;
   font-weight: 500;
 }
 
 #mobileSidebar a:hover {
-  background: #333;
+  background-color: #333;
 }
 
 #mobileSidebar .close-btn {
   font-size: 28px;
   cursor: pointer;
-  margin-bottom: 20px;
   display: block;
+  margin-bottom: 20px;
 }
 
 /* Hamburger button */
@@ -44,16 +43,16 @@
   position: fixed;
   top: 15px;
   left: 15px;
-  z-index: 2100;
   font-size: 28px;
   background: none;
   border: none;
-  color: #111; /* change to suit your page */
+  color: #111;
   cursor: pointer;
-  display: none; /* default hide */
+  z-index: 10000;
+  display: none;
 }
 
-/* SHOW ONLY ON MOBILE */
+/* Show hamburger on mobile only */
 @media (max-width: 991px) {
   #mobileSidebarToggle {
     display: block;
