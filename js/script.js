@@ -1,13 +1,22 @@
 console.log("Samiat Nexus Website Loaded!");
 
-// ✅ Hamburger Menu
-const hamburger = document.getElementById("hamburger");
-const navMenu = document.getElementById("navMenu");
 
-hamburger.addEventListener("click", () => {
-  navMenu.classList.toggle("active");
-  document.body.classList.toggle("menu-open");
+
+const menuBtn = document.getElementById("menuBtn");
+const sidebar = document.getElementById("sidebarMenu");
+const overlay = document.getElementById("overlay");
+
+menuBtn.addEventListener("click", () => {
+  sidebar.classList.add("active");
+  overlay.classList.add("active");
 });
+
+overlay.addEventListener("click", () => {
+  sidebar.classList.remove("active");
+  overlay.classList.remove("active");
+});
+
+
 
 const cards = document.querySelectorAll(".project-card");
 const lightbox = document.getElementById("lightbox");
