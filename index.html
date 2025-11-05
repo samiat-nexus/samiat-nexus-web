@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Samiat Nexus | Digital Agency</title>
 
-  <!-- ✅ CSS FILE -->
+  <!-- ✅ CSS FILES -->
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="responsive.css">
 
@@ -14,20 +14,23 @@
 </head>
 
 <body>
-  
-  <!-- ✅ NAVBAR -->
-<header class="svc-header">
-  <div class="svc-navbar svc-wrap">
-    <div class="svc-logo">Samiat <span>Nexus</span></div>
-    <nav class="svc-nav" aria-label="Main navigation">
-      <a href="index.html" class="active">Home</a>
-      <a href="services.html">Services</a>
-      <a href="packages.html">Packages</a>
-      <a href="why-choose-us.html">Why Choose Us</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
+
+  <!-- ✅ MOBILE SIDEBAR INCLUDE -->
+  <div w3-include-html="/includes/sidebar.html"></div>
+
+  <!-- ✅ NAVBAR (Desktop Only) -->
+  <header class="svc-header">
+    <div class="svc-navbar svc-wrap">
+      <div class="svc-logo">Samiat <span>Nexus</span></div>
+      <nav class="svc-nav" aria-label="Main navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="services.html">Services</a>
+        <a href="packages.html">Packages</a>
+        <a href="why-choose-us.html">Why Choose Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
   <!-- ✅ HERO SECTION -->
   <section class="hero">
@@ -43,7 +46,6 @@
     <div class="hero-graphics" data-aos="fade-left"></div>
   </section>
 
-
   <!-- ✅ CTA -->
   <section class="cta-section" data-aos="zoom-in">
     <h2>Have a Project in Mind?</h2>
@@ -51,20 +53,26 @@
     <a href="contact.html">Contact Us</a>
   </section>
 
- <!-- ✅ FOOTER -->
+  <!-- ✅ FOOTER -->
   <footer>
     <p>© 2025 Samiat Nexus. All rights reserved.</p>
   </footer>
-  
+
   <!-- ✅ AOS Script -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 900, once: true });
   </script>
 
-  <!-- ✅ JS -->
+  <!-- ✅ JS FILES -->
   <script src="js/script.js"></script>
   <script src="responsive.js"></script>
+
+  <!-- ✅ Include Sidebar Script -->
+  <script src="https://www.w3schools.com/lib/w3.js"></script>
+  <script>
+    w3.includeHTML();
+  </script>
 
 </body>
 </html>
