@@ -51,184 +51,91 @@
       </div>
 
       <!-- ✅ Coded Decorative Image -->
-      <div class="contact-image"></div> 
+      <div class="contact-image"></div>
     </div>
     <!-- Right: Form -->
   <form class="contact-form" id="contact-form" action="https://formspree.io/f/mrbonrga" method="POST">
+
+  <!-- Honeypot (Spam Protection) -->
+  <input type="text" name="_gotcha" style="display:none">
 
   <input type="text" name="name" placeholder="Your Name" required>
   <input type="email" name="email" placeholder="Your Email" required>
   <textarea name="message" placeholder="Your Message" required></textarea>
 
   <button type="submit" class="submit-btn" id="submit-btn">
-    <span id="btn-text">Send Message</span>
-
-    <!-- Animated Icon -->
-    <svg id="icon" viewBox="0 0 50 50">
-      <circle id="loader" cx="25" cy="25" r="20" fill="none" stroke-width="4"/>
-      <polyline id="check" points="15,27 22,34 37,18" fill="none" stroke-width="4"/>
-      <line id="error1" x1="18" y1="18" x2="32" y2="32" stroke-width="4"/>
-      <line id="error2" x1="32" y1="18" x2="18" y2="32" stroke-width="4"/>
-    </svg>
+    <span>Send Message</span>
+    <div class="loader" id="loader"></div>
   </button>
 
-  <!-- Popup Message -->
-  <div id="alert-box"></div>
+  <p id="success-msg"></p>
 </form>
 
 <style>
-  #icon {
-    width: 22px;
-    height: 22px;
+  .loader {
+    display: none;
+    width: 16px;
+    height: 16px;
+    border: 3px solid #fff;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
     margin-left: 8px;
-    display: none;
-    stroke: #fff;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+    animation: spin 0.9s linear infinite;
   }
 
-  #loader {
-    stroke-dasharray: 126;
-    stroke-dashoffset: 126;
-    animation: rotate 1s linear infinite;
-    display: none;
-  }
-
-  @keyframes rotate {
+  @keyframes spin {
     to { transform: rotate(360deg); }
   }
 
-  #check, #error1, #error2 {
-    stroke-dasharray: 40;
-    stroke-dashoffset: 40;
-    display: none;
-  }
-
-  /* Alert Popup */
-  #alert-box {
-    position: fixed;
-    bottom: 25px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 14px 22px;
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(12px);
-    border-radius: 12px;
-    color: #fff;
-    font-size: 16px;
+  #success-msg {
     opacity: 0;
-    pointer-events: none;
-    transition: .45s ease;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    margin-top: 10px;
+    font-size: 16px;
+    transition: opacity 0.4s ease-in-out;
   }
 
-  .show {
+  #success-msg.show {
     opacity: 1;
-    bottom: 40px;
-  }
-
-  /* Confetti */
-  .confetti {
-    position: fixed;
-    z-index: 9999;
-    width: 8px;
-    height: 14px;
-    background: hsl(calc(var(--i) * 20), 90%, 55%);
-    top: 0;
-    left: 50%;
-    animation: confetti-fall 1.4s ease-out forwards;
-  }
-
-  @keyframes confetti-fall {
-    to {
-      transform: translateX(calc(var(--i) * 15px - 180px)) translateY(100vh) rotate(360deg);
-      opacity: 0;
-    }
   }
 </style>
 
 <script>
-const form = document.getElementById("contact-form");
-const btnText = document.getElementById("btn-text");
-const icon = document.getElementById("icon");
-const loader = document.getElementById("loader");
-const check = document.getElementById("check");
-const error1 = document.getElementById("error1");
-const error2 = document.getElementById("error2");
-const alertBox = document.getElementById("alert-box");
+  const form = document.getElementById("contact-form");
+  const submitBtn = document.getElementById("submit-btn");
+  const loader = document.getElementById("loader");
+  const successMsg = document.getElementById("success-msg");
 
-form.addEventListener("submit", async (e) => {
-  e.preventDefault();
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-  btnText.style.opacity = 0;
-  icon.style.display = "block";
-  loader.style.display = "block";
-  form.querySelector("button").disabled = true;
+    submitBtn.disabled = true;
+    loader.style.display = "inline-block";
 
-  const res = await fetch(form.action, {
-    method: "POST",
-    body: new FormData(form),
-    headers: { "Accept": "application/json" }
+    const formData = new FormData(form);
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: { "Accept": "application/json" }
+    });
+
+    loader.style.display = "none";
+    submitBtn.disabled = false;
+
+    if (response.ok) {
+      successMsg.textContent = "✅ Message Sent! Thanks for contacting.";
+      successMsg.style.color = "green";
+      successMsg.classList.add("show");
+      form.reset();
+    } else {
+      successMsg.textContent = "❌ Oops! Failed to send. Try again.";
+      successMsg.style.color = "red";
+      successMsg.classList.add("show");
+    }
+
+    setTimeout(() => {
+      successMsg.classList.remove("show");
+    }, 4000);
   });
-
-  loader.style.display = "none";
-
-  if (res.ok) {
-    successEffect("Message sent successfully! ✨");
-    form.reset();
-  } else {
-    errorEffect("Failed to send! Try again ⚠️");
-  }
-});
-
-function successEffect(msg){
-  check.style.display = "block";
-  animateSVG(check);
-  confettiBurst();
-  showAlert(msg, "#00ff99");
-}
-
-function errorEffect(msg){
-  error1.style.display = "block";
-  error2.style.display = "block";
-  animateSVG(error1);
-  animateSVG(error2);
-  showAlert(msg, "#ff6b6b");
-}
-
-function animateSVG(el){
-  el.style.animation = "dash .5s forwards";
-}
-
-function showAlert(message, color){
-  alertBox.textContent = message;
-  alertBox.style.border = `2px solid ${color}`;
-  alertBox.classList.add("show");
-
-  setTimeout(()=>{
-    alertBox.classList.remove("show");
-    resetIcon();
-  }, 3800);
-}
-
-function resetIcon(){
-  icon.style.display="none";
-  check.style.display="none";
-  error1.style.display="none";
-  error2.style.display="none";
-  btnText.style.opacity = 1;
-  form.querySelector("button").disabled = false;
-}
-
-function confettiBurst(){
-  for(let i=0;i<20;i++){
-    let c = document.createElement("div");
-    c.className="confetti";
-    c.style.setProperty("--i", i);
-    document.body.appendChild(c);
-    setTimeout(()=>c.remove(),1500);
-  }
-}
 </script>
 
   </section>
