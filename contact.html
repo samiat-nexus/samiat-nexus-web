@@ -55,16 +55,21 @@
     </div>
 
     <!-- Right: Form -->
-    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="c1d260fc-060c-4ee0-b2a5-17943818b06d">
-
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-
-      <button type="submit" class="submit-btn">Send Message</button>
-      <p id="success-msg"></p>
-    </form>
+  <form
+  action="https://formspree.io/f/mrbonrga"
+  method="POST"
+>
+  <label>
+    Your email:
+    <input type="email" name="email">
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
+  <!-- your other form fields go here -->
+  <button type="submit">Send</button>
+</form>
 
   </section>
 
