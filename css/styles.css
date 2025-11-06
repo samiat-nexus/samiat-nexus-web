@@ -35,13 +35,6 @@ body {
   margin: 0 auto;
 }
 
-/* Responsive for mobile */
-  @media (max-width: 768px) {
-    .menu-toggle {
-      display: block;
-    }
-}
-
 .svc-logo {
   font-weight: 700;
   font-size: 20px;
