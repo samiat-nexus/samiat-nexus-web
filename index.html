@@ -14,6 +14,13 @@
 </head>
 
 <body>
+
+  <!-- Welcome Overlay -->
+<div id="welcome-overlay">
+  <h1 class="welcome-text">WELCOME TO SAMIAT NEXUS</h1>
+  <canvas id="celebration-canvas"></canvas>
+</div>
+
   
   <!-- ✅ NAVBAR -->
 <header class="svc-header">
@@ -28,6 +35,7 @@
     </nav>
   </div>
 </header>
+
 
   <!-- ✅ HERO SECTION -->
   <section class="hero">
@@ -51,10 +59,12 @@
     <a href="contact.html">Contact Us</a>
   </section>
 
+
  <!-- ✅ FOOTER -->
   <footer>
     <p>© 2025 Samiat Nexus. All rights reserved.</p>
   </footer>
+
   
   <!-- ✅ AOS Script -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -62,8 +72,88 @@
     AOS.init({ duration: 900, once: true });
   </script>
 
+
   <!-- ✅ JS -->
   <script src="js/script.js"></script>
+
+  <script>
+// Setup canvas
+const canvas = document.getElementById('celebration-canvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+// Particle class
+class Particle {
+  constructor(x, y, color, dx, dy, size) {
+    this.x = x;
+    this.y = y;
+    this.color = color;
+    this.dx = dx;
+    this.dy = dy;
+    this.size = size;
+    this.alpha = 1;
+    this.decay = 0.02 + Math.random()*0.02;
+  }
+  update() {
+    this.x += this.dx;
+    this.y += this.dy;
+    this.alpha -= this.decay;
+    this.dy += 0.1; // gravity
+  }
+  draw() {
+    ctx.globalAlpha = this.alpha;
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI*2);
+    ctx.fillStyle = this.color;
+    ctx.fill();
+    ctx.globalAlpha = 1;
+  }
+}
+
+// Generate confetti particles
+const particles = [];
+const colors = ['#ff0','#ff4500','#ff6347','#ff7f50','#ffa500','#ff1493','#00ffff','#32cd32'];
+for(let i=0;i<300;i++){
+  const x = Math.random()*canvas.width;
+  const y = Math.random()*canvas.height - canvas.height;
+  const dx = (Math.random()-0.5)*6;
+  const dy = Math.random()*5 + 2;
+  const size = Math.random()*5+2;
+  const color = colors[Math.floor(Math.random()*colors.length)];
+  particles.push(new Particle(x,y,color,dx,dy,size));
+}
+
+// Animate particles
+function animate() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  particles.forEach((p, i) => {
+    p.update();
+    p.draw();
+    if(p.alpha <= 0 || p.y>canvas.height) {
+      // reset particle to top
+      p.x = Math.random()*canvas.width;
+      p.y = -10;
+      p.alpha = 1;
+    }
+  });
+  requestAnimationFrame(animate);
+}
+animate();
+
+// Remove overlay after 3 seconds
+setTimeout(() => {
+  document.getElementById('welcome-overlay').style.transition = 'opacity 0.5s';
+  document.getElementById('welcome-overlay').style.opacity = '0';
+  setTimeout(() => document.getElementById('welcome-overlay').remove(), 500);
+}, 3000);
+
+// Responsive canvas
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+</script>
   
 </body>
 </html>
